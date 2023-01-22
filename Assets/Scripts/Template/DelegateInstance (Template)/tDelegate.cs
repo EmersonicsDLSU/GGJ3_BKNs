@@ -5,28 +5,28 @@ using UnityEngine;
 
 public class tDelegate
 {
-    private static tDelegate shared_instance = null;
+    private static tDelegate _shared_instance = null;
 
     public static tDelegate GetInstance()
     {
-        if (shared_instance == null)
-            shared_instance = new tDelegate();
+        if (_shared_instance == null)
+            _shared_instance = new tDelegate();
 
-        return shared_instance;
+        return _shared_instance;
     }
 
-    public Action D_OnDoorOen = null;
+    public Action D_OnDoorOpen = null;
 
     /* How to add to this delegate:
-    private void Start()
+    private void Initialize()
     {
-        tDelegate.GetInstance().D_OnDoorOen += MoveDoor; // MoveDoor can be a private/public func
+        tDelegate.GetInstance().D_OnDoorOpen += MoveDoor; // MoveDoor can be a private/public func
 
     }
 
     public void OnDestroy()
     {
-        tDelegate.GetInstance().D_OnDoorOen -= MoveDoor;
+        tDelegate.GetInstance().D_OnDoorOpen -= MoveDoor;
     }
      */
 }

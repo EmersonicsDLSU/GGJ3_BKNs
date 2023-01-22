@@ -5,12 +5,12 @@ public class tObjectPool<T>
 {
     // List of poolable objects
     private readonly List<T> _currentStock;
-    // A parameterless function that instantiates a certain class object
+    // A parameter-less function that instantiates a certain class object
     private readonly Func<T> _factoryMethod;
 
-    // List of functions to call when borrowing a poolable
+    // List of functions to call when borrowing a pool object
     private readonly Action<T> _turnOnCallback;
-    // List of functions to call when returning a poolable
+    // List of functions to call when returning a pool object
     private readonly Action<T> _turnOffCallback;
 
     // endless pool if the size is Dynamic
@@ -33,16 +33,7 @@ public class tObjectPool<T>
             _currentStock.Add(o);
         }
     }
-    public tObjectPool(Func<T> factoryMethod, Action<T> turnOnCallback, Action<T> turnOffCallback, List<T> initialStock, bool isDynamic = true)
-    {
-        _factoryMethod = factoryMethod;
-        _isDynamic = isDynamic;
 
-        _turnOffCallback = turnOffCallback;
-        _turnOnCallback = turnOnCallback;
-
-        _currentStock = initialStock;
-    }
     public T GetObject()
     {
         var result = default(T);
