@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class tPatrol : MonoBehaviour
+public class tPatrol : MonoBehaviour 
 {
     public Transform[] waypoints;
     private int _currentWaypointIndex = 0;

@@ -18,7 +18,7 @@ public class tDelegate
     public Action D_OnDoorOpen = null;
 
     /* How to add to this delegate:
-    private void Initialize()
+    private void Awake()
     {
         tDelegate.GetInstance().D_OnDoorOpen += MoveDoor; // MoveDoor can be a private/public func
 
