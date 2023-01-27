@@ -4,7 +4,8 @@ using System.Collections.Generic;
 public class tObjectPool<T>
 {
     // List of poolable objects
-    private readonly List<T> _currentStock;
+    private readonly List<T> _activeStock;
+    private readonly List<T> _inactiveStock;
     // A parameter-less function that instantiates a certain class object
     private readonly Func<T> _factoryMethod;
 
@@ -14,35 +15,37 @@ public class tObjectPool<T>
     private readonly Action<T> _turnOffCallback;
 
     // endless pool if the size is Dynamic
-    private readonly bool _isDynamic;
+    private readonly bool bIsDynamic;
 
     public tObjectPool(Func<T> factoryMethod, Action<T> turnOnCallback, Action<T> turnOffCallback, int initialStock = 0, bool isDynamic = true)
     {
         _factoryMethod = factoryMethod;
-        _isDynamic = isDynamic;
+        bIsDynamic = isDynamic;
 
         _turnOffCallback = turnOffCallback;
         _turnOnCallback = turnOnCallback;
 
-        _currentStock = new List<T>();
+        _activeStock = new List<T>();
+        _inactiveStock = new List<T>();
 
         for (var i = 0; i < initialStock; i++)
         {
             var o = _factoryMethod();
             _turnOffCallback(o);
-            _currentStock.Add(o);
+            _inactiveStock.Add(o);
         }
     }
 
     public T GetObject()
     {
         var result = default(T);
-        if (_currentStock.Count > 0)
+        if (_inactiveStock.Count > 0)
         {
-            result = _currentStock[0];
-            _currentStock.RemoveAt(0);
+            result = _inactiveStock[0];
+            _inactiveStock.RemoveAt(0);
+            _activeStock.Add(result);
         }
-        else if (_isDynamic)
+        else if (bIsDynamic)
             result = _factoryMethod();
         _turnOnCallback(result);
         return result;
@@ -51,6 +54,7 @@ public class tObjectPool<T>
     public void ReturnObject(T o)
     {
         _turnOffCallback(o);
-        _currentStock.Add(o);
+        _inactiveStock.Add(o);
+        _activeStock.Remove(o);
     }
 }
