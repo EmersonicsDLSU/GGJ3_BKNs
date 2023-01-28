@@ -48,12 +48,20 @@ public class tPlayerAnimController : MonoBehaviour
         _tPlayerAnimation = GetComponent<tPlayerAnimation>();
     }
     
+    bool isWalk = false;
     void FixedUpdate()
     {
         // persistent update of movement
-        _rb.velocity = _moveInput * fMoveSpeed;
-    }
+        //_rb.velocity = _moveInput * fMoveSpeed;
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isWalk = !isWalk;
+            if (isWalk) _tPlayerAnimation.WalkAnim(this);
+            else _tPlayerAnimation.IdleAnim(this);
+        }
+    }
+    /*
     // the current scene should have a playerInput
     void OnMove(InputValue value)
     {
@@ -78,6 +86,6 @@ public class tPlayerAnimController : MonoBehaviour
         {
             _tPlayerAnimation.IdleAnim(this);
         }
-    }
     
+        */
 }
