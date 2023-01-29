@@ -30,6 +30,8 @@ public struct AudioInfo
     public float volume;
     [Range(0f, 2.0f)]
     public float pitch;
+    [Range(0f, 1.0f)]
+    public float spatialBlend;
 }
 
 public class tAudioInfo : MonoBehaviour

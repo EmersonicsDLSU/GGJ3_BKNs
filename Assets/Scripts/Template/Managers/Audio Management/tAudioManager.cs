@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class tAudioManager : tSingleton
 {
-    public List<AudioInfo> Ambience;
-    public List<AudioInfo> SFX;
-    public List<AudioInfo> VoiceOver;
-    public List<AudioInfo> BGM;
-    public List<AudioInfo> UI;
+    [HideInInspector] public List<AudioInfo> Ambience;
+    [HideInInspector] public List<AudioInfo> SFX;
+    [HideInInspector] public List<AudioInfo> VoiceOver;
+    [HideInInspector] public List<AudioInfo> BGM;
+    [HideInInspector] public List<AudioInfo> UI;
+
+    private tAudioSourceThrower throwerRef;
 
     public void Awake()
     {
@@ -23,6 +25,15 @@ public class tAudioManager : tSingleton
         else
         {
             Debug.LogWarning("Audio List not found!");
+        }
+
+        if (this.gameObject.GetComponentInChildren<tAudioSourceThrower>())
+        {
+            throwerRef = this.gameObject.GetComponentInChildren<tAudioSourceThrower>();
+        }
+        else
+        {
+            Debug.LogWarning("Audio Thrower not found!");
         }
     }
 
@@ -47,11 +58,25 @@ public class tAudioManager : tSingleton
 
     public void playAmbienceByName(string name)
     {
-        foreach (AudioInfo BGM in BGM)
+        foreach (AudioInfo Ambience in Ambience)
         {
-            if (BGM.name == name)
+            if (Ambience.name == name)
             {
                 //throw sound
+                throwerRef.ThrowAudio(Ambience);
+                return;
+            }
+        }
+    }
+
+    public void playAmbienceByName(string name, Transform Ambience_Loc)
+    {
+        foreach (AudioInfo Ambience in Ambience)
+        {
+            if (Ambience.name == name)
+            {
+                //throw sound
+                throwerRef.ThrowAudio(Ambience_Loc, Ambience);
                 return;
             }
         }
@@ -59,11 +84,25 @@ public class tAudioManager : tSingleton
 
     public void playAmbienceByTag(string tag)
     {
-        foreach (AudioInfo BGM in BGM)
+        foreach (AudioInfo Ambience in Ambience)
         {
-            if (BGM.tag == tag)
+            if (Ambience.tag == tag)
             {
                 //throw sound
+                throwerRef.ThrowAudio(Ambience);
+                return;
+            }
+        }
+    }
+
+    public void playAmbienceByTag(string tag, Transform Ambience_Loc)
+    {
+        foreach (AudioInfo Ambience in Ambience)
+        {
+            if (Ambience.tag == tag)
+            {
+                //throw sound
+                throwerRef.ThrowAudio(Ambience_Loc, Ambience);
                 return;
             }
         }
@@ -73,25 +112,27 @@ public class tAudioManager : tSingleton
 
     #region SFX
 
-    public void playSFXByName(string name)
+    public void playSFXByName(string name, Transform SFX_Loc)
     {
-        foreach (AudioInfo BGM in BGM)
+        foreach (AudioInfo SFX in SFX)
         {
-            if (BGM.name == name)
+            if (SFX.name == name)
             {
                 //throw sound
+                throwerRef.ThrowAudio(SFX_Loc, SFX);
                 return;
             }
         }
     }
 
-    public void playSFXByTag(string tag)
+    public void playSFXByTag(string tag, Transform SFX_Loc)
     {
-        foreach (AudioInfo BGM in BGM)
+        foreach (AudioInfo SFX in SFX)
         {
-            if (BGM.tag == tag)
+            if (SFX.tag == tag)
             {
                 //throw sound
+                throwerRef.ThrowAudio(SFX_Loc, SFX);
                 return;
             }
         }
@@ -103,11 +144,12 @@ public class tAudioManager : tSingleton
 
     public void playVOByName(string name)
     {
-        foreach (AudioInfo BGM in BGM)
+        foreach (AudioInfo VO in VoiceOver)
         {
-            if (BGM.name == name)
+            if (VO.name == name)
             {
                 //throw sound
+                throwerRef.ThrowAudio(VO);
                 return;
             }
         }
@@ -115,11 +157,12 @@ public class tAudioManager : tSingleton
 
     public void playVOByTag(string tag)
     {
-        foreach (AudioInfo BGM in BGM)
+        foreach (AudioInfo VO in VoiceOver)
         {
-            if (BGM.tag == tag)
+            if (VO.tag == tag)
             {
                 //throw sound
+                throwerRef.ThrowAudio(VO);
                 return;
             }
         }
@@ -136,6 +179,7 @@ public class tAudioManager : tSingleton
             if (BGM.name == name)
             {
                 //throw sound
+                throwerRef.ThrowAudio(BGM);
                 return;
             }
         }
@@ -148,6 +192,7 @@ public class tAudioManager : tSingleton
             if (BGM.tag == tag)
             {
                 //throw sound
+                throwerRef.ThrowAudio(BGM);
                 return;
             }
         }
@@ -159,11 +204,12 @@ public class tAudioManager : tSingleton
 
     public void playUIByName(string name)
     {
-        foreach (AudioInfo BGM in BGM)
+        foreach (AudioInfo UI in UI)
         {
-            if (BGM.name == name)
+            if (UI.name == name)
             {
                 //throw sound
+                throwerRef.ThrowAudio(UI);
                 return;
             }
         }
@@ -171,11 +217,12 @@ public class tAudioManager : tSingleton
 
     public void playUIByTag(string tag)
     {
-        foreach (AudioInfo BGM in BGM)
+        foreach (AudioInfo UI in UI)
         {
-            if (BGM.tag == tag)
+            if (UI.tag == tag)
             {
                 //throw sound
+                throwerRef.ThrowAudio(UI);
                 return;
             }
         }
