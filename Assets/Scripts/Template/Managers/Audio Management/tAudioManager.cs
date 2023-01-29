@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class tAudioManager : tSingleton
+public class tAudioManager : tSingleton<tAudioManager>
 {
     [HideInInspector] public List<AudioInfo> Ambience;
     [HideInInspector] public List<AudioInfo> SFX;
@@ -13,8 +13,10 @@ public class tAudioManager : tSingleton
 
     private tAudioSourceThrower throwerRef;
 
-    public void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         tAudioInfo TAudioInfo;
 
         if (this.gameObject.GetComponentInChildren<tAudioInfo>())
@@ -35,6 +37,7 @@ public class tAudioManager : tSingleton
         {
             Debug.LogWarning("Audio Thrower not found!");
         }
+
     }
 
     void SortAudio(List<AudioInfo> list)
@@ -52,6 +55,11 @@ public class tAudioManager : tSingleton
             else if (audio.type == AudioInfoType.UI)
                 UI.Add(audio);
         }
+    }
+
+    public void StopAudioByTag()
+    {
+
     }
 
     #region Ambience
