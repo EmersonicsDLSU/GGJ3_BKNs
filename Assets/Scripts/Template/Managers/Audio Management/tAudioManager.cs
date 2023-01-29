@@ -57,9 +57,14 @@ public class tAudioManager : tSingleton<tAudioManager>
         }
     }
 
-    public void StopAudioByTag()
+    public void StopAudioByTag(string tag)
     {
+        throwerRef.StopAudioByTag(tag);
+    }
 
+    public void StopAudioByType(AudioInfoType type)
+    {
+        throwerRef.StopAudioByType(type);
     }
 
     #region Ambience

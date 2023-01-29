@@ -9,6 +9,8 @@ public class tAudioSourceThrower : MonoBehaviour
     [SerializeField] private Transform _sourceLocation;
     [SerializeField] private GameObject _audioSourcePrefab;
 
+    [HideInInspector] public List<tAudioSource> activeSource;
+
     private tObjectPool<tAudioSource> audioSourcePool;
     // Start is called before the first frame update
     void Start()
@@ -40,23 +42,26 @@ public class tAudioSourceThrower : MonoBehaviour
     {
         // parent and reposition(displayed) the recently borrowed pool object
         audioSource.transform.parent = _spawnLocation;
-        audioSource.transform.position = _spawnLocation.position;
 
+        activeSource.Add(audioSource);
         audioSource.gameObject.SetActive(true);
     }
     private void TurnOffAudioSource(tAudioSource audioSource)
     {
         // parent and reposition(hidden) the recently borrowed pool object
         audioSource.transform.parent = _sourceLocation;
-        audioSource.transform.position = _sourceLocation.position;
 
+        activeSource.Remove(audioSource);
         audioSource.gameObject.SetActive(false);
     }
 
     public void ThrowAudio(Transform location, AudioInfo info)
     {
         tAudioSource audio = audioSourcePool.GetObject();
+        TurnOnAudioSource(audio);
 
+        audio._tag = info.tag;
+        audio._type = info.type;
         audio._audioSource.clip = info.clip;
         audio._audioSource.mute = info.isMuted;
         audio._audioSource.loop = info.isLoop;
@@ -67,13 +72,18 @@ public class tAudioSourceThrower : MonoBehaviour
 
         audio.transform.position = location.position;
 
+        activeSource.Add(audio);
+
         audio._audioSource.Play();
     }
 
     public void ThrowAudio(AudioInfo info)
     {
         tAudioSource audio = audioSourcePool.GetObject();
+        TurnOnAudioSource(audio);
 
+        audio._tag = info.tag;
+        audio._type = info.type;
         audio._audioSource.clip = info.clip;
         audio._audioSource.mute = info.isMuted;
         audio._audioSource.loop = info.isLoop;
@@ -84,6 +94,57 @@ public class tAudioSourceThrower : MonoBehaviour
 
         audio.transform.position = _sourceLocation.position;
 
+
         audio._audioSource.Play();
+    }
+
+    public void StopAudioByTag(string tag)
+    {
+        foreach (tAudioSource audio in activeSource)
+        {
+            if (audio._tag == tag)
+            {
+                audio._tag = "None";
+                audio._type = AudioInfoType.None;
+                audio._audioSource.Stop();
+                audio._audioSource.clip = null;
+                audio._audioSource.mute = false;
+                audio._audioSource.loop = false;
+                audio._audioSource.priority = 0;
+                audio._audioSource.volume = 0;
+                audio._audioSource.pitch = 0;
+                audio._audioSource.spatialBlend = 0;
+
+                TurnOffAudioSource(audio);
+                audioSourcePool.ReturnObject(audio);
+            }
+        }
+
+        //Debug.Log("Audio Source with tag " + tag + " not found!");
+    }
+
+    public void StopAudioByType(AudioInfoType type)
+    {
+        foreach (tAudioSource audio in activeSource)
+        {
+            if (audio._type == type)
+            {
+                audio._tag = "None";
+                audio._type = AudioInfoType.None;
+                audio._audioSource.Stop();
+                audio._audioSource.clip = null;
+                audio._audioSource.mute = false;
+                audio._audioSource.loop = false;
+                audio._audioSource.priority = 0;
+                audio._audioSource.volume = 0;
+                audio._audioSource.pitch = 0;
+                audio._audioSource.spatialBlend = 0;
+
+                TurnOffAudioSource(audio);
+                audioSourcePool.ReturnObject(audio);
+            }
+        }
+
+        //Debug.Log("Audio Source with tag " + tag + " not found!");
     }
 }
