@@ -6,7 +6,7 @@ using UnityEngine;
 public class MPAttribs
 {
     [Tooltip("Player current speed multiplier")]
-    public float playerSpeed = 1.0f;
+    public float playerSpeed = 2.0f;
     [Tooltip("Player current health")]
     public float playerHealth = 100.0f;
     [Tooltip("Player current depletion multiplier")]
