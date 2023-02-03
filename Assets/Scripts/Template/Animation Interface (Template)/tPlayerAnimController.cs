@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
-public class tPlayerAnimController : MonoBehaviour
+public class tPlayerAnimController : MonoBehaviour, IDataPersistence
 {
     // Property with set values for playing certain animation 
     public HumanStates CurrentState
@@ -49,7 +49,8 @@ public class tPlayerAnimController : MonoBehaviour
     }
     
     bool isWalk = false;
-    void FixedUpdate()
+    private int totalDeath = 0;
+    void Update()
     {
         // persistent update of movement
         //_rb.velocity = _moveInput * fMoveSpeed;
@@ -59,6 +60,7 @@ public class tPlayerAnimController : MonoBehaviour
             isWalk = !isWalk;
             if (isWalk) _tPlayerAnimation.WalkAnim(this);
             else _tPlayerAnimation.IdleAnim(this);
+            Debug.Log($"TotalDeath = {++totalDeath}");
         }
     }
     /*
@@ -88,4 +90,15 @@ public class tPlayerAnimController : MonoBehaviour
         }
     
         */
+    public void LoadData(GameData data)
+    {
+        totalDeath = data.totalDeath;
+        Debug.Log($"Game is Load = {totalDeath}");
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.totalDeath = totalDeath;
+        Debug.Log($"Game is Save = {totalDeath}");
+    }
 }
