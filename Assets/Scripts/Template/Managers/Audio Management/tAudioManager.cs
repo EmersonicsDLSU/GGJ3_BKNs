@@ -133,6 +133,7 @@ public class tAudioManager : tSingleton<tAudioManager>
             {
                 //throw sound
                 throwerRef.ThrowAudio(SFX_Loc, SFX);
+                Debug.Log("Thrown");
                 return;
             }
         }
@@ -242,4 +243,12 @@ public class tAudioManager : tSingleton<tAudioManager>
     }
 
     #endregion
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playSFXByName("Throb",this.transform);
+        }
+    }
 }
