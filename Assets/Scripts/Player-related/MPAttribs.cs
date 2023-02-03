@@ -9,4 +9,6 @@ public class MPAttribs
     public float playerSpeed = 1.0f;
     [Tooltip("Player current health")]
     public float playerHealth = 100.0f;
+    [Tooltip("Player current depletion multiplier")]
+    public float depletionMultiplier = 0.01f;
 }

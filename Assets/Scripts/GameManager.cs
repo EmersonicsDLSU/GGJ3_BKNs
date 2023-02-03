@@ -12,7 +12,6 @@ public class GameManager : tSingleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
-
         
     }
 }

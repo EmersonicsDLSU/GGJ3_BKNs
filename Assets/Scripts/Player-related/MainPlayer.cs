@@ -15,6 +15,7 @@ public class MainPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //For debugging player health depletion
+        //Debug.Log(MainPlayerAttributes.playerHealth -= (1 * MainPlayerAttributes.depletionMultiplier));
     }
 }
