@@ -19,51 +19,18 @@ public class MPLook : MonoBehaviour, IMPRefs
 
     [Tooltip("Acceleration when looking")]
     public float Acceleration = 50.0f;
-
-    private bool _isMobile;
-
+ 
     private Vector2 _curLookInputValue;
     private float _curCameraXRotation;
     private float _curCameraYRotation;
 
-    private void Start()
-    {
-        _isMobile = Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer;
-
-        if (_isMobile)
-        {
-            StartMobile();
-        }
-        else
-        {
-            StartDesktop();
-        }
-    }
-
-    private void StartMobile()
-    {
-        if (UnityEngine.InputSystem.Gyroscope.current != null)
-        {
-            InputSystem.EnableDevice(UnityEngine.InputSystem.Gyroscope.current);
-        }
-        if (AttitudeSensor.current != null)
-        {
-            InputSystem.EnableDevice(AttitudeSensor.current);
-        }
-    }
-
-    private void StartDesktop()
+    public void RefStart(MainPlayer mainRef)
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void RefUpdate(MainPlayer mainRef)
     {
-        if (_isMobile)
-        {
-            _curLookInputValue = UnityEngine.InputSystem.Gyroscope.current.angularVelocity.ReadValue();
-        }
-
         UpdateLook(mainRef);
     }
 

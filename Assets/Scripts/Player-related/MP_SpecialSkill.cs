@@ -5,16 +5,10 @@ using UnityEngine;
 public class MP_SpecialSkill : MonoBehaviour, IMPRefs
 {
     private MainPlayer _mainRef;
-    // Start is called before the first frame update
-    void Start()
-    {
-        _mainRef = FindObjectOfType<MainPlayer>();
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void RefStart(MainPlayer mainRef)
     {
-        
+        _mainRef = mainRef;
     }
 
     public void RefUpdate(MainPlayer mainRef)
