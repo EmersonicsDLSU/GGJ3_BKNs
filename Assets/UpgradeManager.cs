@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,9 +17,17 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private Image[] UpgradeArray2;
     [SerializeField] private Image[] UpgradeArray3;
 
+    [SerializeField] private TextMeshProUGUI[] priceText;
+    private int currentPrice1;
+    private int currentPrice2;
+    private int currentPrice3;
+
     private void Awake()
     {
         gm = GameManager.instance;
+        currentPrice1 = 5;
+        currentPrice2 = 5;
+        currentPrice3 = 5;
     }
 
     private void OnEnable()
@@ -48,6 +57,12 @@ public class UpgradeManager : MonoBehaviour
         {
             UpgradeArray3[i].color = new Color32(198, 4, 0, 255);
         }
+
+ 
+        priceText[0].text = "Price: " + currentPrice1.ToString();
+        priceText[1].text = "Price: " + currentPrice2.ToString();
+        priceText[2].text = "Price: " + currentPrice3.ToString();
+       
     }
 
     public void SetUpgradeValue(int index)
@@ -55,14 +70,40 @@ public class UpgradeManager : MonoBehaviour
         switch (index)
         {
             case 0:
-                
-                gm.GetUpgradeDictionary()[ECollectible.SpeedCollectible] += 1;
+                if (CurrencyManager.Instance.GetCurrency() >= currentPrice1)
+                {
+                    gm.GetUpgradeDictionary()[ECollectible.SpeedCollectible] += 1;
+                    CurrencyManager.Instance.SubtractCurrency(currentPrice1);
+                    IncreasePrice(index);
+                }
+                else
+                {
+                    Debug.Log("Missing " + (currentPrice1 - CurrencyManager.Instance.GetCurrency()));
+                }
                 break;
             case 1:
-                gm.GetUpgradeDictionary()[ECollectible.MultiplierCollectible] += 1;
+                if (CurrencyManager.Instance.GetCurrency() >= currentPrice2)
+                {
+                    gm.GetUpgradeDictionary()[ECollectible.MultiplierCollectible] += 1;
+                    CurrencyManager.Instance.SubtractCurrency(currentPrice2);
+                    IncreasePrice(index);
+                }
+                else
+                {
+                    Debug.Log("Missing " + ( currentPrice2 - CurrencyManager.Instance.GetCurrency()));
+                }
                 break;
             case 2:
-                gm.GetUpgradeDictionary()[ECollectible.SlowDepleteCollectible] += 1;
+                if (CurrencyManager.Instance.GetCurrency() >= currentPrice3)
+                {
+                    gm.GetUpgradeDictionary()[ECollectible.SlowDepleteCollectible] += 1;
+                    CurrencyManager.Instance.SubtractCurrency(currentPrice3);
+                    IncreasePrice(index);
+                }
+                else
+                {
+                    Debug.Log("Missing " + (currentPrice3 - CurrencyManager.Instance.GetCurrency()));
+                }
                 break;
             default:
                 break;
@@ -78,5 +119,22 @@ public class UpgradeManager : MonoBehaviour
         init_SlowDeplete = gm.GetUpgradeDictionary()[ECollectible.SlowDepleteCollectible];
 
         UpdateUpgradeData();
+    }
+
+    private void IncreasePrice(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                currentPrice1 += currentPrice1 * 2;
+                break;
+            case 1:
+                currentPrice2 += currentPrice2 * 2;
+                break;
+            case 2:
+                currentPrice3 += currentPrice3 * 2;
+                break;
+        }
+        
     }
 }
