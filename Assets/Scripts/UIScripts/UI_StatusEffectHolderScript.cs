@@ -28,6 +28,7 @@ public class UI_StatusEffectHolderScript : MonoBehaviour
                 if (buffTicks[i] >= buffDuration)
                 {
                     IsBuffEnable[i] = false;
+                    ConfigureStatusEffect(i, 0);
                 }
                 else
                 {

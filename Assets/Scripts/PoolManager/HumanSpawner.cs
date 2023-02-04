@@ -19,7 +19,7 @@ public class HumanSpawner : MonoBehaviour
             Debug.LogError("Missing prefab or component!");
         else
         {
-            _objectPool = new ObjectPool<HumanPool>(HumanFactoryMethod, TurnOnHuman, TurnOffHuman, 30, true);
+            _objectPool = new ObjectPool<HumanPool>(HumanFactoryMethod, TurnOnHuman, TurnOffHuman, 100, true);
         }
     }
     private HumanPool HumanFactoryMethod()

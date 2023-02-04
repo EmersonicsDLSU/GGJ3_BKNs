@@ -73,6 +73,7 @@ public class CollectibleSpawner : MonoBehaviour
         speed.transform.position = _sourceLocation.position;
 
         speed.gameObject.SetActive(false);
+        Debug.Log($"Return Speed");
     }
     
     // For Mult pool
@@ -105,6 +106,7 @@ public class CollectibleSpawner : MonoBehaviour
         speed.transform.position = _sourceLocation.position;
 
         speed.gameObject.SetActive(false);
+        Debug.Log($"Return Mult");
     }
     
     // For Slow pool
@@ -137,6 +139,7 @@ public class CollectibleSpawner : MonoBehaviour
         speed.transform.position = _sourceLocation.position;
 
         speed.gameObject.SetActive(false);
+        Debug.Log($"Return Slow");
     }
     
     [SerializeField] private int _maxSpeedSize;

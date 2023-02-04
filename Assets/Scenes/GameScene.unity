@@ -2321,7 +2321,7 @@ MonoBehaviour:
   - {fileID: 604276603}
   _sourceLocation: {fileID: 1612052082}
   _humanPrefab: {fileID: 2931425459490287247, guid: 5556fa0340ea8be4b84d0edd66689f4c, type: 3}
-  _maxSize: 30
+  _maxSize: 100
 --- !u!4 &1612052082
 Transform:
   m_ObjectHideFlags: 0
