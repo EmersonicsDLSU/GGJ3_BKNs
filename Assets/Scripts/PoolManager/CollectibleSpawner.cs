@@ -17,6 +17,7 @@ public class CollectibleSpawner : MonoBehaviour
     void Start()
     {
         
+        
         if (_spawnLocation == null || _sourceLocation == null)
             Debug.LogError("Missing one or more Transform requirement!");
         // for speed pool
