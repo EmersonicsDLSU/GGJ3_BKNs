@@ -19,10 +19,12 @@ public class PlayerAnimController : MonoBehaviour, IMPRefs
                     _animator.Play("Idle");
                     break;
                 case ZombieStates.WALKING:
-                    _animator.Play("Walking");
+                    _animator.CrossFade("Walking", 1.0f);
+                    //_animator.Play("Walking");
                     break;
                 case ZombieStates.ATTACK:
-                    _animator.Play("Attack");
+                    _animator.CrossFade("Attack", 0.5f);
+                    //_animator.Play("Attack");
                     break;
                 case ZombieStates.FLEX:
                     _animator.Play("Flex");
