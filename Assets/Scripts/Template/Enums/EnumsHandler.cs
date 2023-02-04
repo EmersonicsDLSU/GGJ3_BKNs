@@ -10,5 +10,5 @@ public enum ECollectible
 {
     SpeedCollectible = 0,
     MultiplierCollectible,
-    SlowDepleteCollectible
+    SlowDepleteCollectible,
 }; 
