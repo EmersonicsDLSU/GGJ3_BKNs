@@ -19,6 +19,7 @@ public class GameTimer : MonoBehaviour
     {
         //call the timer to run
         RunTimer();
+        Debug.Log(GetElapsedGameTime());
     }
 
     private void RunTimer()
@@ -31,7 +32,6 @@ public class GameTimer : MonoBehaviour
         minuteVal = ((int)timerValue) / 60;
         secondVal = timerValue % 60;
 
-        string retstring = minuteVal + ": " + secondVal;
-        return retstring;
+        return string.Format(minuteVal + ":" + "{0:#0.00}", secondVal);
     }
 }
