@@ -6,13 +6,16 @@ using UnityEngine.InputSystem;
 public class MPLook : MonoBehaviour, IMPRefs
 {
     [Tooltip ("Sensitivity for horizontal mouse input")]
-    public float HorizontalMouseSensitivity = 0.5f;
+    public float HorizontalMouseSensitivity = 0.4f;
 
     [Tooltip ("Sensitivity for vertical mouse input")]
-    public float VerticalMouseSensitivity = 0.5f;
+    public float VerticalMouseSensitivity = 0.4f;
 
     [Tooltip("Maximum rotation for looking up and down")]
     public float MaxVerticalLook = 65.0f;
+
+    [Tooltip("Acceleration when looking")]
+    public float Acceleration = 8.5f;
 
     private bool _isMobile;
 
@@ -77,7 +80,10 @@ public class MPLook : MonoBehaviour, IMPRefs
         _curCameraYRotation += _curLookInputValue.x * HorizontalMouseSensitivity;
         cameraRotation.y = _curCameraYRotation;
 
-        mainRef.CameraTransform.eulerAngles = new Vector3(cameraRotation.x, mainRef.CameraTransform.eulerAngles.y, mainRef.CameraTransform.eulerAngles.z);
-        mainRef.transform.eulerAngles = new Vector3(mainRef.transform.eulerAngles.x, cameraRotation.y, mainRef.transform.eulerAngles.z);
+        Vector3 newCameraRotation = new Vector3(cameraRotation.x, mainRef.CameraTransform.eulerAngles.y, mainRef.CameraTransform.eulerAngles.z);
+        Vector3 newTransformRotation = new Vector3(mainRef.transform.eulerAngles.x, cameraRotation.y, mainRef.transform.eulerAngles.z);
+
+        mainRef.CameraTransform.rotation = Quaternion.Lerp(mainRef.CameraTransform.rotation, Quaternion.Euler(newCameraRotation), Time.deltaTime * Acceleration);
+        mainRef.transform.rotation = Quaternion.Lerp(mainRef.transform.rotation, Quaternion.Euler(newTransformRotation), Time.deltaTime * Acceleration);
     }
 }
