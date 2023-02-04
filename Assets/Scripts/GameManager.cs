@@ -24,7 +24,17 @@ public class GameManager : tSingleton<GameManager>
         collectibleUpgradeLevel[ECollectible.SlowDepleteCollectible] = 1;
 
     }
+    
+    public void ResetPlayerScore()
+    { 
+        playerScore = 0; 
+        gameTime = 0.0f; 
+    }
 
+    public void SetPlayerScore(int score)
+    { 
+        playerScore = score; 
+    }
     public int GetPlayerScore()
     { 
         return playerScore; 

@@ -651,9 +651,10 @@ GameObject:
   - component: {fileID: 4108612658665802279}
   - component: {fileID: 899501427911084266}
   - component: {fileID: 2816134285531917081}
+  - component: {fileID: 8004476745606673600}
   m_Layer: 0
   m_Name: AI_Human
-  m_TagString: Untagged
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -766,8 +767,20 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6963089, y: 2.64261, z: 1.58425}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0.06126702, y: 0.821304, z: 0.14033921}
+--- !u!114 &8004476745606673600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2931425459490287247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42baad042740a6949855fcf7ce421b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3100297014253767020
 GameObject:
   m_ObjectHideFlags: 0
