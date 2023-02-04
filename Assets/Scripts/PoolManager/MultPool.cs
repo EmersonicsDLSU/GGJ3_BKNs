@@ -27,27 +27,22 @@ public class MultPool : MonoBehaviour
 
     public GameObject _bloodSplashPrefab;
     
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         GameManagerReference = GameManager.instance;
 
 
         if (collision.transform.CompareTag(sTagToCompare))
         {
-            ContactPoint contact = collision.contacts[0];
-            Quaternion rotation = collision.transform.rotation;
-            Vector3 position = contact.point;
-            //Instantiate(_bloodSplashPrefab, position, rotation);
-
             //call speed buff fxn
             mainPlayerReference.MainPlayerAttributes.scoreMultiplier =
                 GameManagerReference.GetMultiplierUpgradeEquivalent(GameManagerReference.GetUpgradeDictionary()[ECollectible.MultiplierCollectible]);
             // display effect icon in HUD
             uiStatusEffect.ActivateStatusEffectUI((int)ECollectible.SpeedCollectible);
-
-            Invoke("ResetAttribute", 5.0f);
-
+            
             _objectPool.ReturnObject(this);
+            Invoke("ResetAttribute", 5.0f);
+            
         }
     }
 

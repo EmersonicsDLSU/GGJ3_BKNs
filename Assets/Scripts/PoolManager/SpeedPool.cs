@@ -26,29 +26,23 @@ public class SpeedPool : MonoBehaviour
     }
 
     public GameObject _bloodSplashPrefab;
-
-    void OnCollisionEnter(Collision collision)
+    
+    void OnTriggerEnter(Collider collision)
     {
         GameManagerReference = GameManager.instance;
 
         if (collision.transform.CompareTag(sTagToCompare))
         {
-            ContactPoint contact = collision.contacts[0];
-            Quaternion rotation = collision.transform.rotation;
-            Vector3 position = contact.point;
-            //instantiate a blood splash particle fx
-            //Instantiate(_bloodSplashPrefab, position, rotation);
-
             //call speed buff fxn
             mainPlayerReference.MainPlayerAttributes.playerSpeed =
                 GameManagerReference.GetSpeedUpgradeEquivalent(GameManagerReference.GetUpgradeDictionary()[ECollectible.SpeedCollectible]);
 
             // display effect icon in HUD
             uiStatusEffect.ActivateStatusEffectUI((int)ECollectible.SpeedCollectible);
-
-            Invoke("ResetAttribute", 5.0f);
-
+            
             _objectPool.ReturnObject(this);
+            Invoke("ResetAttribute", 5.0f);
+            
         }
     }
 
