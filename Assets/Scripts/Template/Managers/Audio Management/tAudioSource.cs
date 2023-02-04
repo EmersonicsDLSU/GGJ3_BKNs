@@ -8,6 +8,8 @@ public class tAudioSource : MonoBehaviour
     [HideInInspector] public AudioSource _audioSource;
     [HideInInspector] public string _tag;
     [HideInInspector] public AudioInfoType _type;
+    [HideInInspector] public bool _isPlaying;
+
     private tObjectPool<tAudioSource> audioSourcePool;
 
     private void Awake()
@@ -19,10 +21,5 @@ public class tAudioSource : MonoBehaviour
     {
         audioSourcePool = objectPool;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
