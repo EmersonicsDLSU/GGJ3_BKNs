@@ -6,59 +6,60 @@ public class HumanSpawner : MonoBehaviour
 {
     [SerializeField] private List <Transform> _spawnLocation;
     [SerializeField] private Transform _sourceLocation;
-    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private GameObject _humanPrefab;
+    [SerializeField] private int _maxSize = 30;
 
-    private tObjectPool<tBullet> _objectPool;
+    private ObjectPool<HumanPool> _objectPool;
 
     void Start()
     {
-        
         if (_spawnLocation == null || _sourceLocation == null)
             Debug.LogError("Missing one or more Transform requirement!");
-        if (_bulletPrefab == null || _bulletPrefab.GetComponent<tBullet>() == null)
+        if (_humanPrefab == null || _humanPrefab.GetComponent<HumanPool>() == null)
             Debug.LogError("Missing prefab or component!");
         else
         {
-            _objectPool = new tObjectPool<tBullet>(BulletFactoryMethod, TurnOnBullet, TurnOffBullet, 5, true);
+            _objectPool = new ObjectPool<HumanPool>(HumanFactoryMethod, TurnOnHuman, TurnOffHuman, 30, true);
         }
     }
-    private tBullet BulletFactoryMethod()
+    private HumanPool HumanFactoryMethod()
     {
-        GameObject obj = Instantiate(_bulletPrefab) as GameObject;
-        tBullet objScript = obj.GetComponent<tBullet>();
+        GameObject obj = Instantiate(_humanPrefab) as GameObject;
+        HumanPool objScript = obj.GetComponent<HumanPool>();
         // attach a reference of the objectPool to the pool object
         objScript.AssignObjectPool(_objectPool);
 
         obj.transform.parent = _sourceLocation;
         obj.gameObject.SetActive(false);
 
-        return obj.GetComponent<tBullet>();
+        return obj.GetComponent<HumanPool>();
     }
 
-    private void TurnOnBullet(tBullet bullet)
+    private void TurnOnHuman(HumanPool human)
     {
         int rand = Random.Range(0, _spawnLocation.Count - 1);
         // parent and reposition(displayed) the recently borrowed pool object
-        bullet.transform.parent = _spawnLocation[rand];
-        bullet.transform.position = _spawnLocation[rand].position;
+        human.transform.parent = _spawnLocation[rand];
+        human.transform.position = _spawnLocation[rand].position;
 
-        bullet.gameObject.SetActive(true);
+        human.gameObject.SetActive(true);
     }
-    private void TurnOffBullet(tBullet bullet)
+    private void TurnOffHuman(HumanPool human)
     {
         // parent and reposition(hidden) the recently borrowed pool object
-        bullet.transform.parent = _sourceLocation;
-        bullet.transform.position = _sourceLocation.position;
+        human.transform.parent = _sourceLocation;
+        human.transform.position = _sourceLocation.position;
 
-        bullet.gameObject.SetActive(false);
+        human.gameObject.SetActive(false);
     }
 
     // functionality for spawning bullet objects
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (_objectPool.GetActiveStockSize() < _maxSize)
         {
             _objectPool.GetObject();
+            Debug.LogError($"Spawn!!: {_objectPool.GetActiveStockSize()}");
         }
     }
 }

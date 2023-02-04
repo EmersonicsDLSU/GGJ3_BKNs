@@ -12,7 +12,7 @@ public class HumanScript : MonoBehaviour
 
     void Start()
     {
-        agent.GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
     }
     public Vector3 RandomNavmeshLocation(float radius)
     {
