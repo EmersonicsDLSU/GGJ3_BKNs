@@ -1072,6 +1072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1025288301}
   - component: {fileID: 1025288302}
+  - component: {fileID: 1025288303}
   m_Layer: 5
   m_Name: StatusEffects
   m_TagString: Untagged
@@ -1128,6 +1129,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1025288303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025288300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72de8f62afb72734298cfefdfc1ec91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusEffectGameObjects:
+  - {fileID: 1103164951}
+  - {fileID: 1044686058}
+  - {fileID: 1778083510}
 --- !u!1 &1044686057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,13 +1154,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1044686058}
+  - component: {fileID: 1044686059}
   m_Layer: 5
   m_Name: StatusEffect_ScoreMult
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1044686058
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1162,11 +1180,23 @@ RectTransform:
   m_Father: {fileID: 1025288301}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -190}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1044686059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044686057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274164e96c16e754e8577806bf499cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1062643967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1062643968}
   - component: {fileID: 1062643970}
+  - component: {fileID: 1062643971}
   m_Layer: 5
   m_Name: Infections
   m_TagString: Untagged
@@ -1216,6 +1247,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062643967}
   m_CullTransparentMesh: 1
+--- !u!114 &1062643971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062643967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918aafa62b5520a43a2753d34bf23815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1103164950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,13 +1268,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1103164951}
+  - component: {fileID: 1103164952}
   m_Layer: 5
   m_Name: StatusEffect_Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1103164951
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1250,11 +1294,23 @@ RectTransform:
   m_Father: {fileID: 1025288301}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1103164952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103164950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274164e96c16e754e8577806bf499cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1153044696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,7 +2130,7 @@ GameObject:
   - component: {fileID: 1525840708}
   - component: {fileID: 1525840707}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text_InfectionNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2359,13 +2415,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1778083510}
+  - component: {fileID: 1778083511}
   m_Layer: 5
   m_Name: StatusEffect_DepletionMult
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1778083510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2384,11 +2441,23 @@ RectTransform:
   m_Father: {fileID: 1025288301}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -330}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1778083511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778083509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274164e96c16e754e8577806bf499cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1793550131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,7 +2470,7 @@ GameObject:
   - component: {fileID: 1793550134}
   - component: {fileID: 1793550133}
   m_Layer: 5
-  m_Name: Infections_Background (1)
+  m_Name: Infections
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

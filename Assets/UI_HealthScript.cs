@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_HealthScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Transform healthBar;
+
+    void Awake()
     {
-        
+        healthBar = transform.Find("bar").transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateHealthUI(float normalizedHealth)
     {
-        
+        healthBar.transform.localScale = new Vector3(normalizedHealth, 1, 1);
     }
+
 }
