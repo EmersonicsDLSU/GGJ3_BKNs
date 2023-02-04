@@ -243,12 +243,5 @@ public class tAudioManager : tSingleton<tAudioManager>
     }
 
     #endregion
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            playSFXByName("Throb",this.transform);
-        }
-    }
+    
 }
