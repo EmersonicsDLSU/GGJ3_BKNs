@@ -3,7 +3,7 @@ using UnityEngine.Pool;
 
 public class HumanPool : MonoBehaviour
 {
-    private ObjectPool<HumanPool> _objectPool;
+    [HideInInspector]public ObjectPool<HumanPool> _objectPool;
 
     public void AssignObjectPool(ObjectPool<HumanPool> objectPool)
     {
