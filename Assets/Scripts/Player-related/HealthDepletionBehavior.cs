@@ -12,9 +12,12 @@ public class HealthDepletionBehavior : MonoBehaviour, IMPRefs
 
     public void RefUpdate(MainPlayer mainRef)
     {
-        mainRef.MainPlayerAttributes.playerHealth -= (1 * mainRef.MainPlayerAttributes.depletionMultiplier);
-        healthSc.UpdateHealthUI(mainRef.MainPlayerAttributes.playerHealth / 100.0f);
-        if (mainRef.MainPlayerAttributes.playerHealth <= 0)
+        if (mainRef.MainPlayerAttributes.playerHealth > 0)
+        {
+            mainRef.MainPlayerAttributes.playerHealth -= (1 * mainRef.MainPlayerAttributes.depletionMultiplier);
+            healthSc.UpdateHealthUI(mainRef.MainPlayerAttributes.playerHealth / 100.0f);
+        }
+        else
         {
             mainRef.PlayerAnimController.FireDeathAnim();
         }
