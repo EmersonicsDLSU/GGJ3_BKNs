@@ -16,6 +16,6 @@ public class MainPlayer : MonoBehaviour
     void Update()
     {
         //For debugging player health depletion
-        //Debug.Log(MainPlayerAttributes.playerHealth -= (1 * MainPlayerAttributes.depletionMultiplier));
+        Debug.Log(MainPlayerAttributes.playerHealth -= (1 * MainPlayerAttributes.depletionMultiplier));
     }
 }
