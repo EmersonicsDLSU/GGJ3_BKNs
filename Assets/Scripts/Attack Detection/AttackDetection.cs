@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackDetectionm : MonoBehaviour
+public class AttackDetection : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,21 @@ public class AttackDetectionm : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(!other.CompareTag("Player"))
+        {
+            //check if attack button is clicked
+            if(GetComponent<PlayerAnimController>().CurrentState == ZombieStates.ATTACK)
+            {
+                //kill NPC by returning to pool
+                Debug.LogWarning("KILL");
+
+                //play kill sfx?
+            }
+
+        }
     }
 }
