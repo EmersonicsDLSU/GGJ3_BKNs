@@ -40,6 +40,11 @@ public class GameManager : tSingleton<GameManager>
         return gameTime;
     }
 
+    public void SetGameTime(float timeVal)
+    {
+        gameTime = timeVal;
+    }
+
     public float GetSpeedUpgradeEquivalent(int upgradeLevel)
     {
         return upgradeLevel * 1.5f;
