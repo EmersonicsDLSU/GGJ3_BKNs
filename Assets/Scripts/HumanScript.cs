@@ -6,10 +6,14 @@ using UnityEngine.AI;
 
 public class HumanScript : MonoBehaviour
 {
-    public NavMeshAgent agent;
+    private NavMeshAgent agent;
     private float Cooldown = 4.0f;
     private float nextLoc;
 
+    void Start()
+    {
+        agent.GetComponent<NavMeshAgent>();
+    }
     public Vector3 RandomNavmeshLocation(float radius)
     {
         Vector3 randomDirection = Random.insideUnitSphere * radius;

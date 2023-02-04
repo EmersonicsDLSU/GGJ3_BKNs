@@ -69,4 +69,9 @@ public class PlayerAnimController : MonoBehaviour, IMPRefs
         _playerAnimation.WalkAnim(this);
         Debug.LogError("Fire Walk");
     }
+    
+    public void FireDeathAnim()
+    {
+        _playerAnimation.DeathAnim(this);
+    }
 }
