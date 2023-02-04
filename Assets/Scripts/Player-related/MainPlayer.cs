@@ -4,35 +4,31 @@ using UnityEngine;
 
 public class MainPlayer : MonoBehaviour
 {
-    public PlayerInput PlayerInput;
+    private List<IMPRefs> _componentList;
 
-    public MPAttribs MainPlayerAttributes;
-
-    private void OnEnable()
-    {
-        PlayerInput.Enable ();
-    }
-
-    private void OnDisable()
-    {
-        PlayerInput.Disable ();
-    }
+    // object's components
+    [HideInInspector] public Transform CameraTransform;
+    [HideInInspector] public MPAttribs MainPlayerAttributes;
+    [HideInInspector] public MPLook MainPlayerLook;
 
     private void Awake()
     {
-        PlayerInput = new PlayerInput ();
+        // gets the reference of the components
+        CameraTransform = GetComponentInChildren<Camera>().transform;
+        if (GetComponentInChildren<MPLook>() != null) MainPlayerLook = GetComponentInChildren<MPLook>();
+        else Debug.LogError("Missing 'MPLook' script!");
+
+        // add it to the component list
+        _componentList = new List<IMPRefs>();
+        _componentList.Add(MainPlayerLook);
     }
 
-    // Start is called before the first frame update
-    private void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     private void Update()
     {
-        //For debugging player health depletion
-        //Debug.Log(MainPlayerAttributes.playerHealth -= (1 * MainPlayerAttributes.depletionMultiplier));
+        // controls the update of all components
+        foreach (var comp in _componentList)
+        {
+            comp.RefUpdate(this);
+        }
     }
 }
