@@ -13,7 +13,7 @@ public class MainAI : MonoBehaviour
     private void Awake()
     {
         // gets the reference of the components
-        if (GetComponentInChildren<PlayerAnimController>() != null) HumanAnimController = GetComponentInChildren<HumanAnimController>();
+        if (GetComponentInChildren<HumanAnimController>() != null) HumanAnimController = GetComponentInChildren<HumanAnimController>();
         else Debug.LogError("Missing 'PlayerAnimController' script!");
 
         // add it to the component list

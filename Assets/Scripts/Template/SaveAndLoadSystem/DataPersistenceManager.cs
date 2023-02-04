@@ -24,7 +24,7 @@ public class DataPersistenceManager : MonoBehaviour
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler dataHandler;
 
-    private string selectedProfileId = "";
+    private string selectedProfileId = "data";
 
     private Coroutine autoSaveCoroutine;
 

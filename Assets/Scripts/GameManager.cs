@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : tSingleton<GameManager>
+public class GameManager : tSingleton<GameManager>, IDataPersistence
 {
     private int playerScore = 0;
+    [HideInInspector] public int _highScore = 0;
+    [HideInInspector] public float _longestTimeSurvived = 0.0f;
     private Dictionary<ECollectible, int> collectibleUpgradeLevel = new Dictionary<ECollectible, int>();
     private float gameTime = 0.0f;
 
@@ -70,7 +72,6 @@ public class GameManager : tSingleton<GameManager>
         switch(upgradeLevel)
         {
             case 1:
-                Debug.LogWarning("pumasok");
                 return 0.005f;
                 break;
             case 2:
@@ -89,5 +90,19 @@ public class GameManager : tSingleton<GameManager>
 
         //dummy return
         return 1.0f;
+    }
+
+    public void LoadData(GameData data)
+    {
+        _highScore = data._highScore;
+        _longestTimeSurvived = data._longestTimeSurvived;
+    }
+
+    public void SaveData(GameData data)
+    {
+        if (playerScore > data._highScore)
+            data._highScore = playerScore;
+        if (gameTime > data._longestTimeSurvived)
+            data._longestTimeSurvived = gameTime;
     }
 }
