@@ -22,7 +22,7 @@ public class tAudioSourceThrower : MonoBehaviour
             Debug.LogError("Missing prefab or component!");
         else
         {
-            audioSourcePool = new tObjectPool<tAudioSource>(AudioFactoryMethod, TurnOnAudioSource, TurnOffAudioSource, 10, true);
+            audioSourcePool = new tObjectPool<tAudioSource>(AudioFactoryMethod, TurnOnAudioSource, TurnOffAudioSource, 10, false);
         }
     }
     private tAudioSource AudioFactoryMethod()
@@ -71,6 +71,7 @@ public class tAudioSourceThrower : MonoBehaviour
         audio._audioSource.spatialBlend = info.spatialBlend;
 
         audio.transform.position = location.position;
+        audio._isPlaying = true;
 
         activeSource.Add(audio);
 
@@ -93,6 +94,7 @@ public class tAudioSourceThrower : MonoBehaviour
         audio._audioSource.spatialBlend = info.spatialBlend;
 
         audio.transform.position = _sourceLocation.position;
+        audio._isPlaying = true;
 
 
         audio._audioSource.Play();
@@ -114,9 +116,10 @@ public class tAudioSourceThrower : MonoBehaviour
                 audio._audioSource.volume = 0;
                 audio._audioSource.pitch = 0;
                 audio._audioSource.spatialBlend = 0;
+                audio._isPlaying = false;
 
-                TurnOffAudioSource(audio);
                 audioSourcePool.ReturnObject(audio);
+                TurnOffAudioSource(audio);
             }
         }
 
@@ -139,12 +142,37 @@ public class tAudioSourceThrower : MonoBehaviour
                 audio._audioSource.volume = 0;
                 audio._audioSource.pitch = 0;
                 audio._audioSource.spatialBlend = 0;
+                audio._isPlaying = false;
 
-                TurnOffAudioSource(audio);
                 audioSourcePool.ReturnObject(audio);
+                TurnOffAudioSource(audio);
             }
         }
 
         //Debug.Log("Audio Source with tag " + tag + " not found!");
+    }
+
+    void Update()
+    {
+        foreach (tAudioSource audio in activeSource)
+        {
+            if (audio._isPlaying && !audio._audioSource.isPlaying)
+            {
+                audio._tag = "None";
+                audio._type = AudioInfoType.None;
+                audio._audioSource.Stop();
+                audio._audioSource.clip = null;
+                audio._audioSource.mute = false;
+                audio._audioSource.loop = false;
+                audio._audioSource.priority = 0;
+                audio._audioSource.volume = 0;
+                audio._audioSource.pitch = 0;
+                audio._audioSource.spatialBlend = 0;
+
+                audioSourcePool.ReturnObject(audio);
+                TurnOffAudioSource(audio);
+                audio._isPlaying = false;
+            }
+        }
     }
 }
