@@ -11,7 +11,8 @@ public class MPLook : MonoBehaviour, IMPRefs
     [Tooltip ("Sensitivity for vertical mouse input")]
     public float VerticalMouseSensitivity = 0.5f;
 
-    private const float MaxCameraXRotation = 85.0f;
+    [Tooltip("Maximum rotation for looking up and down")]
+    public float MaxVerticalLook = 65.0f;
 
     private bool _isMobile;
 
@@ -70,7 +71,7 @@ public class MPLook : MonoBehaviour, IMPRefs
         Vector3 cameraRotation = mainRef.CameraTransform.eulerAngles;
 
         _curCameraXRotation -= _curLookInputValue.y * VerticalMouseSensitivity;
-        _curCameraXRotation = Mathf.Clamp(_curCameraXRotation, -MaxCameraXRotation, MaxCameraXRotation);
+        _curCameraXRotation = Mathf.Clamp(_curCameraXRotation, -MaxVerticalLook, MaxVerticalLook);
         cameraRotation.x = _curCameraXRotation;
 
         _curCameraYRotation += _curLookInputValue.x * HorizontalMouseSensitivity;
