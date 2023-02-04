@@ -18,6 +18,7 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private Image[] UpgradeArray3;
 
     [SerializeField] private TextMeshProUGUI[] priceText;
+    [SerializeField] private TextMeshProUGUI currencyText;
     private int currentPrice1;
     private int currentPrice2;
     private int currentPrice3;
@@ -62,7 +63,8 @@ public class UpgradeManager : MonoBehaviour
         priceText[0].text = "Price: " + currentPrice1.ToString();
         priceText[1].text = "Price: " + currentPrice2.ToString();
         priceText[2].text = "Price: " + currentPrice3.ToString();
-       
+        currencyText.text = "Currency: " + CurrencyManager.Instance.GetCurrency();
+
     }
 
     public void SetUpgradeValue(int index)
