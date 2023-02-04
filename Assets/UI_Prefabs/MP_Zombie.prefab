@@ -174,7 +174,8 @@ GameObject:
   - component: {fileID: 1032375288675608950}
   - component: {fileID: 1032375288675608951}
   - component: {fileID: 1032375288675608953}
-  - component: {fileID: 5555503868720268986}
+  - component: {fileID: 7178701925746108198}
+  - component: {fileID: 3131933200438037838}
   m_Layer: 0
   m_Name: MP_Zombie
   m_TagString: Player
@@ -271,7 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
   _playerAnimation: {fileID: 0}
---- !u!114 &5555503868720268986
+--- !u!114 &7178701925746108198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,9 +281,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1032375288675608949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d45d19f99aa55424f91a1d5ca8ea4c21, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ef50b09590125641868ab020486d11c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &3131933200438037838
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032375288675608949}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6873378
+  m_Height: 2.8848677
+  m_Direction: 1
+  m_Center: {x: 0.0018694997, y: 0.8799049, z: 0.035088062}
 --- !u!1 &1155071380221912009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2192,6 +2216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HorizontalMouseSensitivity: 0.5
   VerticalMouseSensitivity: 0.5
+  MinVerticalLook: 10
   MaxVerticalLook: 65
   Acceleration: 8.5
 --- !u!1 &6279461010007387163
