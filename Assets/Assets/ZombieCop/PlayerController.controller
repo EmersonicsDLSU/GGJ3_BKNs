@@ -61,7 +61,7 @@ BlendTree:
   m_Name: Flex
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: a84321364735812428dae0e8981c64a7, type: 3}
+    m_Motion: {fileID: 7400000, guid: 9e09f6055d4b16f4eac40cd0816a0f72, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -110,7 +110,7 @@ BlendTree:
   m_Name: Walking
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 36c9d28d6343d7943823420c127211d7, type: 3}
+    m_Motion: {fileID: 7400000, guid: 85478af72fdc1c147afc0bd1adcd342c, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -247,7 +247,7 @@ BlendTree:
   m_Name: Idle
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: aa0a3b74b8aff274aa70a9ac73197931, type: 3}
+    m_Motion: {fileID: 7400000, guid: 62f3a5db00b7c1a4fabbd94101249d18, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -270,7 +270,7 @@ BlendTree:
   m_Name: Attack
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: fee998cd3cff47a46a2babe52a0c9323, type: 3}
+    m_Motion: {fileID: 7400000, guid: f7bb080bfb59b714280bd0da3c7468df, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -293,7 +293,7 @@ BlendTree:
   m_Name: Death
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 49464222c59497e479e7c2def6f81ef0, type: 3}
+    m_Motion: {fileID: 7400000, guid: 923ade0db5a7cca4e9e1282a93dcd810, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1

@@ -10,6 +10,7 @@ public class MainPlayer : MonoBehaviour
     [HideInInspector] public Transform CameraTransform;
     [HideInInspector] public MPAttribs MainPlayerAttributes;
     [HideInInspector] public MPLook MainPlayerLook;
+    [HideInInspector] public PlayerAnimController PlayerAnimController;
 
     private void Awake()
     {
@@ -17,10 +18,13 @@ public class MainPlayer : MonoBehaviour
         CameraTransform = GetComponentInChildren<Camera>().transform;
         if (GetComponentInChildren<MPLook>() != null) MainPlayerLook = GetComponentInChildren<MPLook>();
         else Debug.LogError("Missing 'MPLook' script!");
+        if (GetComponentInChildren<PlayerAnimController>() != null) PlayerAnimController = GetComponentInChildren<PlayerAnimController>();
+        else Debug.LogError("Missing 'PlayerAnimController' script!");
 
         // add it to the component list
         _componentList = new List<IMPRefs>();
         _componentList.Add(MainPlayerLook);
+        _componentList.Add(PlayerAnimController);
     }
 
     private void Update()

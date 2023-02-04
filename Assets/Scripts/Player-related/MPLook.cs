@@ -84,6 +84,7 @@ public class MPLook : MonoBehaviour, IMPRefs
         Vector3 newTransformRotation = new Vector3(mainRef.transform.eulerAngles.x, cameraRotation.y, mainRef.transform.eulerAngles.z);
 
         mainRef.CameraTransform.rotation = Quaternion.Lerp(mainRef.CameraTransform.rotation, Quaternion.Euler(newCameraRotation), Time.deltaTime * Acceleration);
-        mainRef.transform.rotation = Quaternion.Lerp(mainRef.transform.rotation, Quaternion.Euler(newTransformRotation), Time.deltaTime * Acceleration);
+        if (mainRef.PlayerAnimController.CurrentState == ZombieStates.WALKING)
+            mainRef.transform.rotation = Quaternion.Lerp(mainRef.transform.rotation, Quaternion.Euler(newTransformRotation), Time.deltaTime * Acceleration);
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
-public class PlayerAnimController : MonoBehaviour
+public class PlayerAnimController : MonoBehaviour, IMPRefs
 {
     // Property with set values for playing certain animation 
     public ZombieStates CurrentState
@@ -19,7 +19,7 @@ public class PlayerAnimController : MonoBehaviour
                     _animator.Play("Idle");
                     break;
                 case ZombieStates.WALKING:
-                    _animator.Play("Walk");
+                    _animator.Play("Walking");
                     break;
                 case ZombieStates.ATTACK:
                     _animator.Play("Attack");
@@ -35,6 +35,7 @@ public class PlayerAnimController : MonoBehaviour
                     break;
             }
         }
+        get { return _currentState; }
     }
     private ZombieStates _currentState;
     
@@ -52,7 +53,7 @@ public class PlayerAnimController : MonoBehaviour
         _playerAnimation = GetComponent<PlayerAnimation>();
     }
     
-    void Update()
+    public void RefUpdate(MainPlayer mainRef)
     {
 
     }
@@ -60,5 +61,10 @@ public class PlayerAnimController : MonoBehaviour
     public void FireAttackAnim()
     {
         _playerAnimation.AttackAnim(this);
+    }
+    public void FireWalkAnim()
+    {
+        _playerAnimation.WalkAnim(this);
+        Debug.LogError("Fire Walk");
     }
 }
