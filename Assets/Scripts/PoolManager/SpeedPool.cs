@@ -29,9 +29,8 @@ public class SpeedPool : MonoBehaviour
             ContactPoint contact = collision.contacts[0];
             Quaternion rotation = collision.transform.rotation;
             Vector3 position = contact.point;
-
             //instantiate a blood splash particle fx
-            Instantiate(_bloodSplashPrefab, position, rotation);
+            //Instantiate(_bloodSplashPrefab, position, rotation);
 
             //call speed buff fxn
             mainPlayerReference.MainPlayerAttributes.playerSpeed =

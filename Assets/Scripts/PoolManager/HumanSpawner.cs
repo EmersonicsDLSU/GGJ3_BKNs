@@ -59,7 +59,7 @@ public class HumanSpawner : MonoBehaviour
         if (_objectPool.GetActiveStockSize() < _maxSize)
         {
             _objectPool.GetObject();
-            Debug.LogError($"Spawn!!: {_objectPool.GetActiveStockSize()}");
+            //Debug.LogError($"Spawn!!: {_objectPool.GetActiveStockSize()}");
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollectibleSpawner : MonoBehaviour
 {
-    [SerializeField] private Transform _spawnLocation;
+    [SerializeField] private List<Transform> _spawnLocation;
     [SerializeField] private Transform _sourceLocation;
     [SerializeField] private GameObject _speedPrefab;
     [SerializeField] private GameObject _multPrefab;
@@ -59,9 +59,10 @@ public class CollectibleSpawner : MonoBehaviour
 
     private void TurnOnSpeed(SpeedPool speed)
     {
+        int rand = Random.Range(0, _spawnLocation.Count - 1);
         // parent and reposition(displayed) the recently borrowed pool object
-        speed.transform.parent = _spawnLocation;
-        speed.transform.position = _spawnLocation.position;
+        speed.transform.parent = _spawnLocation[rand];
+        speed.transform.position = _spawnLocation[rand].position;
 
         speed.gameObject.SetActive(true);
     }
@@ -77,7 +78,7 @@ public class CollectibleSpawner : MonoBehaviour
     // For Mult pool
     private MultPool MultFactoryMethod()
     {
-        GameObject obj = Instantiate(_speedPrefab) as GameObject;
+        GameObject obj = Instantiate(_multPrefab) as GameObject;
         MultPool objScript = obj.GetComponent<MultPool>();
         // attach a reference of the objectPool to the pool object
         objScript.AssignObjectPool(_multPool);
@@ -90,9 +91,10 @@ public class CollectibleSpawner : MonoBehaviour
 
     private void TurnOnMult(MultPool speed)
     {
+        int rand = Random.Range(0, _spawnLocation.Count - 1);
         // parent and reposition(displayed) the recently borrowed pool object
-        speed.transform.parent = _spawnLocation;
-        speed.transform.position = _spawnLocation.position;
+        speed.transform.parent = _spawnLocation[rand];
+        speed.transform.position = _spawnLocation[rand].position;
 
         speed.gameObject.SetActive(true);
     }
@@ -108,7 +110,7 @@ public class CollectibleSpawner : MonoBehaviour
     // For Slow pool
     private SlowPool SlowFactoryMethod()
     {
-        GameObject obj = Instantiate(_speedPrefab) as GameObject;
+        GameObject obj = Instantiate(_slowPrefab) as GameObject;
         SlowPool objScript = obj.GetComponent<SlowPool>();
         // attach a reference of the objectPool to the pool object
         objScript.AssignObjectPool(_slowPool);
@@ -121,9 +123,10 @@ public class CollectibleSpawner : MonoBehaviour
 
     private void TurnOnSlow(SlowPool speed)
     {
+        int rand = Random.Range(0, _spawnLocation.Count - 1);
         // parent and reposition(displayed) the recently borrowed pool object
-        speed.transform.parent = _spawnLocation;
-        speed.transform.position = _spawnLocation.position;
+        speed.transform.parent = _spawnLocation[rand];
+        speed.transform.position = _spawnLocation[rand].position;
 
         speed.gameObject.SetActive(true);
     }
@@ -135,10 +138,24 @@ public class CollectibleSpawner : MonoBehaviour
 
         speed.gameObject.SetActive(false);
     }
-
+    
+    [SerializeField] private int _maxSpeedSize;
+    [SerializeField] private int _maxMultSize;
+    [SerializeField] private int _maxSlowSize;
     // functionality for spawning bullet objects
     void Update()
     {
-
+        if (_speedPool.GetActiveStockSize() < _maxSpeedSize)
+        {
+            _speedPool.GetObject();
+        }
+        if (_multPool.GetActiveStockSize() < _maxMultSize)
+        {
+            _multPool.GetObject();
+        }
+        if (_slowPool.GetActiveStockSize() < _maxSlowSize)
+        {
+            _slowPool.GetObject();
+        }
     }
 }

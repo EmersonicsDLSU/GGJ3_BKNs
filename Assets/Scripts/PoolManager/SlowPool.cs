@@ -30,7 +30,7 @@ public class SlowPool : MonoBehaviour
             ContactPoint contact = collision.contacts[0];
             Quaternion rotation = collision.transform.rotation;
             Vector3 position = contact.point;
-            Instantiate(_bloodSplashPrefab, position, rotation);
+            //Instantiate(_bloodSplashPrefab, position, rotation);
 
             //call speed buff fxn
             mainPlayerReference.MainPlayerAttributes.depletionMultiplier =
