@@ -12,6 +12,7 @@ public class HumanPool : MonoBehaviour
 
     public GameObject _bloodSplashPrefab;
 
+    /*
     void OnCollisionEnter(Collision collision)
     {
         ContactPoint contact = collision.contacts[0];
@@ -21,4 +22,5 @@ public class HumanPool : MonoBehaviour
 
         _objectPool.ReturnObject(this);
     }
+    */
 }

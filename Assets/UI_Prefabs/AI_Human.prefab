@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 8432286153397890639}
   - component: {fileID: 4612745268329410053}
   - component: {fileID: 4108612658665802279}
+  - component: {fileID: 899501427911084266}
   m_Layer: 0
   m_Name: AI_Human
   m_TagString: Untagged
@@ -676,7 +677,7 @@ Transform:
   - {fileID: 8629074361221984706}
   - {fileID: 8738795547960665607}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8432286153397890639
 Animator:
@@ -732,7 +733,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
+--- !u!114 &899501427911084266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2931425459490287247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199c254ac408a444b96fd48136fdd88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bloodSplashPrefab: {fileID: 0}
 --- !u!1 &3100297014253767020
 GameObject:
   m_ObjectHideFlags: 0

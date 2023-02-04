@@ -57,4 +57,9 @@ public class ObjectPool<T>
         _inactiveStock.Add(o);
         _activeStock.Remove(o);
     }
+
+    public int GetActiveStockSize()
+    {
+        return _activeStock.Count;
+    }
 }
