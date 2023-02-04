@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HumanSpawner : MonoBehaviour
 {
-    [SerializeField] private Transform _spawnLocation;
+    [SerializeField] private List <Transform> _spawnLocation;
     [SerializeField] private Transform _sourceLocation;
     [SerializeField] private GameObject _bulletPrefab;
 
@@ -37,9 +37,10 @@ public class HumanSpawner : MonoBehaviour
 
     private void TurnOnBullet(tBullet bullet)
     {
+        int rand = Random.Range(0, _spawnLocation.Count - 1);
         // parent and reposition(displayed) the recently borrowed pool object
-        bullet.transform.parent = _spawnLocation;
-        bullet.transform.position = _spawnLocation.position;
+        bullet.transform.parent = _spawnLocation[rand];
+        bullet.transform.position = _spawnLocation[rand].position;
 
         bullet.gameObject.SetActive(true);
     }

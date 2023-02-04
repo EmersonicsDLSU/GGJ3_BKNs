@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthDepletionBehavior : MonoBehaviour
+public class HealthDepletionBehavior : MonoBehaviour, IMPRefs
 {
-    private MainPlayer mainPlayerSc = null;
-
     // Start is called before the first frame update
     void Start()
     {
-        mainPlayerSc = FindObjectOfType<MainPlayer>();
     }
 
     // Update is called once per frame
@@ -17,11 +14,8 @@ public class HealthDepletionBehavior : MonoBehaviour
     {
         
     }
-
-    private void Run()
+    public void RefUpdate(MainPlayer mainRef)
     {
-
-        mainPlayerSc.MainPlayerAttributes.playerHealth -= (1 * mainPlayerSc.MainPlayerAttributes.depletionMultiplier);
-
+        mainRef.MainPlayerAttributes.playerHealth -= (1 * mainRef.MainPlayerAttributes.depletionMultiplier);
     }
 }

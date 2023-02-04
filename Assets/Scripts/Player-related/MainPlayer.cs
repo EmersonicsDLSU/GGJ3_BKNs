@@ -11,6 +11,7 @@ public class MainPlayer : MonoBehaviour
     [HideInInspector] public MPAttribs MainPlayerAttributes;
     [HideInInspector] public MPLook MainPlayerLook;
     [HideInInspector] public PlayerAnimController PlayerAnimController;
+    [HideInInspector] public HealthDepletionBehavior HealthDepletionBehavior;
 
     private void Awake()
     {
@@ -20,11 +21,14 @@ public class MainPlayer : MonoBehaviour
         else Debug.LogError("Missing 'MPLook' script!");
         if (GetComponentInChildren<PlayerAnimController>() != null) PlayerAnimController = GetComponentInChildren<PlayerAnimController>();
         else Debug.LogError("Missing 'PlayerAnimController' script!");
+        if (GetComponentInChildren<HealthDepletionBehavior>() != null) HealthDepletionBehavior = GetComponentInChildren<HealthDepletionBehavior>();
+        else Debug.LogError("Missing 'HealthDepletionBehavior' script!");
 
         // add it to the component list
         _componentList = new List<IMPRefs>();
         _componentList.Add(MainPlayerLook);
         _componentList.Add(PlayerAnimController);
+        _componentList.Add(HealthDepletionBehavior);
     }
 
     private void Update()
