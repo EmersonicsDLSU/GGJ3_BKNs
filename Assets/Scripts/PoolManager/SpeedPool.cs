@@ -11,6 +11,13 @@ public class SpeedPool : MonoBehaviour
     private MainPlayer mainPlayerReference = null;
     private GameManager GameManagerReference = null;
 
+    private UI_StatusEffectHolderScript uiStatusEffect;
+
+    void Start()
+    {
+        uiStatusEffect = FindObjectOfType<UI_StatusEffectHolderScript>();
+    }
+
     public void AssignObjectPool(ObjectPool<SpeedPool> objectPool)
     {
         _objectPool = objectPool;
@@ -35,6 +42,9 @@ public class SpeedPool : MonoBehaviour
             //call speed buff fxn
             mainPlayerReference.MainPlayerAttributes.playerSpeed =
                 GameManagerReference.GetSpeedUpgradeEquivalent(GameManagerReference.GetUpgradeDictionary()[ECollectible.SpeedCollectible]);
+
+            // display effect icon in HUD
+            uiStatusEffect.ActivateStatusEffectUI((int)ECollectible.SpeedCollectible);
 
             Invoke("ResetAttribute", 5.0f);
 

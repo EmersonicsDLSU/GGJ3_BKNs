@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class HealthDepletionBehavior : MonoBehaviour, IMPRefs
 {
+    private UI_HealthScript healthSc;
     public void RefStart(MainPlayer mainRef)
     {
-
+        healthSc = FindObjectOfType<UI_HealthScript>();
     }
 
     public void RefUpdate(MainPlayer mainRef)
     {
         mainRef.MainPlayerAttributes.playerHealth -= (1 * mainRef.MainPlayerAttributes.depletionMultiplier);
+        healthSc.UpdateHealthUI(mainRef.MainPlayerAttributes.playerHealth / 100.0f);
         if (mainRef.MainPlayerAttributes.playerHealth <= 0)
         {
             mainRef.PlayerAnimController.FireDeathAnim();

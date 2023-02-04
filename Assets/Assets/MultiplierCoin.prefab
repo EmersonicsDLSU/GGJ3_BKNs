@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5967660234770120336}
   - component: {fileID: 1686483333578055511}
   - component: {fileID: -8258984508833770490}
-  - component: {fileID: 3503172678451991350}
+  - component: {fileID: 5963048751195187482}
   m_Layer: 0
   m_Name: MultiplierCoin
   m_TagString: Untagged
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bloodSplashPrefab: {fileID: 0}
---- !u!114 &3503172678451991350
+--- !u!114 &5963048751195187482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,6 +131,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6915415666552461863}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bb06bf281cddec4bad9309924f68d71, type: 3}
+  m_Script: {fileID: 11500000, guid: e146c2f0da6e19f4ab715d0e1911b54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

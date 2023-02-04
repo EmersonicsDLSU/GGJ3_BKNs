@@ -10,6 +10,13 @@ public class SlowPool : MonoBehaviour
 
     private MainPlayer mainPlayerReference = null;
     private GameManager GameManagerReference = null;
+    
+    private UI_StatusEffectHolderScript uiStatusEffect;
+
+    void Start()
+    {
+        uiStatusEffect = FindObjectOfType<UI_StatusEffectHolderScript>();
+    }
 
     public void AssignObjectPool(ObjectPool<SlowPool> objectPool)
     {
@@ -35,6 +42,8 @@ public class SlowPool : MonoBehaviour
             //call speed buff fxn
             mainPlayerReference.MainPlayerAttributes.depletionMultiplier =
                 GameManagerReference.GetSlowDepleteUpgradeEquivalent(GameManagerReference.GetUpgradeDictionary()[ECollectible.SlowDepleteCollectible]);
+            // display effect icon in HUD
+            uiStatusEffect.ActivateStatusEffectUI((int)ECollectible.SpeedCollectible);
 
             Invoke("ResetAttribute", 5.0f);
 

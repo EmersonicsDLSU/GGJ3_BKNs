@@ -10,6 +10,13 @@ public class MultPool : MonoBehaviour
 
     private MainPlayer mainPlayerReference = null;
     private GameManager GameManagerReference = null;
+    
+    private UI_StatusEffectHolderScript uiStatusEffect;
+
+    void Start()
+    {
+        uiStatusEffect = FindObjectOfType<UI_StatusEffectHolderScript>();
+    }
 
     public void AssignObjectPool(ObjectPool<MultPool> objectPool)
     {
@@ -19,7 +26,7 @@ public class MultPool : MonoBehaviour
     }
 
     public GameObject _bloodSplashPrefab;
-
+    
     void OnCollisionEnter(Collision collision)
     {
         GameManagerReference = GameManager.instance;
@@ -35,6 +42,8 @@ public class MultPool : MonoBehaviour
             //call speed buff fxn
             mainPlayerReference.MainPlayerAttributes.scoreMultiplier =
                 GameManagerReference.GetMultiplierUpgradeEquivalent(GameManagerReference.GetUpgradeDictionary()[ECollectible.MultiplierCollectible]);
+            // display effect icon in HUD
+            uiStatusEffect.ActivateStatusEffectUI((int)ECollectible.SpeedCollectible);
 
             Invoke("ResetAttribute", 5.0f);
 
