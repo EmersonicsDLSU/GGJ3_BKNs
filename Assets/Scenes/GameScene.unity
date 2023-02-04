@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.046940878, g: 0.08362194, b: 0.14163694, a: 1}
+  m_IndirectSpecularColor: {r: 0.04694085, g: 0.08362194, b: 0.14163676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -202,7 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 30640866}
 --- !u!195 &30640866
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -346,7 +345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 46930205}
 --- !u!195 &46930205
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -490,7 +488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 59428750}
 --- !u!195 &59428750
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -634,7 +631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 118262680}
 --- !u!195 &118262680
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -871,7 +867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 193700318}
 --- !u!195 &193700318
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1015,7 +1010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 210299795}
 --- !u!195 &210299795
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1159,7 +1153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 225401526}
 --- !u!195 &225401526
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1365,7 +1358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 274581711}
 --- !u!195 &274581711
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1509,7 +1501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 327158867}
 --- !u!195 &327158867
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1859,7 +1850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 416918603}
 --- !u!195 &416918603
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2003,7 +1993,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 449978379}
 --- !u!195 &449978379
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2209,7 +2198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 510474207}
 --- !u!195 &510474207
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2446,7 +2434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 676196232}
 --- !u!195 &676196232
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2652,7 +2639,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 825428544}
 --- !u!195 &825428544
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2859,7 +2845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 877010873}
 --- !u!195 &877010873
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3003,7 +2988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 919094336}
 --- !u!195 &919094336
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3147,7 +3131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 933667322}
 --- !u!195 &933667322
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3419,7 +3402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1109886206}
 --- !u!195 &1109886206
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3563,7 +3545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1204593100}
 --- !u!195 &1204593100
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3738,7 +3719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1235059304}
 --- !u!195 &1235059304
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3882,7 +3862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1252734818}
 --- !u!195 &1252734818
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4026,7 +4005,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1266551878}
 --- !u!195 &1266551878
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4170,7 +4148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1286107601}
 --- !u!195 &1286107601
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4314,7 +4291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1321183506}
 --- !u!195 &1321183506
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4458,7 +4434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1362141177}
 --- !u!195 &1362141177
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4602,7 +4577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1416690684}
 --- !u!195 &1416690684
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4746,7 +4720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1421727727}
 --- !u!195 &1421727727
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4890,7 +4863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1475701387}
 --- !u!195 &1475701387
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5034,7 +5006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1484577727}
 --- !u!195 &1484577727
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5324,7 +5295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1575468413}
 --- !u!195 &1575468413
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5687,7 +5657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1680086242}
 --- !u!195 &1680086242
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5831,7 +5800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1712302323}
 --- !u!195 &1712302323
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5975,7 +5943,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1742797414}
 --- !u!195 &1742797414
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6119,7 +6086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1800912291}
 --- !u!195 &1800912291
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6294,7 +6260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1847821923}
 --- !u!195 &1847821923
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6438,7 +6403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1920874857}
 --- !u!195 &1920874857
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6582,7 +6546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1978536913}
 --- !u!195 &1978536913
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6726,7 +6689,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1980811866}
 --- !u!195 &1980811866
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6901,7 +6863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 2111246569}
 --- !u!195 &2111246569
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7045,7 +7006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e844667a994749b443e871088225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 2111304831}
 --- !u!195 &2111304831
 NavMeshAgent:
   m_ObjectHideFlags: 0
