@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.046940878, g: 0.08362194, b: 0.14163694, a: 1}
+  m_IndirectSpecularColor: {r: 0.047048286, g: 0.08362358, b: 0.14172298, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1200,6 +1200,22 @@ PrefabInstance:
     - target: {fileID: 5507013320197430899, guid: e69ad259e7729454b9b77888f86fd473, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279461009441798739, guid: e69ad259e7729454b9b77888f86fd473, type: 3}
+      propertyPath: MaxVerticalLook
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279461009441798739, guid: e69ad259e7729454b9b77888f86fd473, type: 3}
+      propertyPath: MinVerticalLook
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279461009441798739, guid: e69ad259e7729454b9b77888f86fd473, type: 3}
+      propertyPath: VerticalMouseSensitivity
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279461009441798739, guid: e69ad259e7729454b9b77888f86fd473, type: 3}
+      propertyPath: HorizontalMouseSensitivity
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6279461010007387163, guid: e69ad259e7729454b9b77888f86fd473, type: 3}
       propertyPath: m_Layer
