@@ -190,7 +190,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032375288675608949}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.9233577, y: 0, z: 0.5944977}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
@@ -203,7 +203,7 @@ Transform:
   - {fileID: 6279461010007387162}
   - {fileID: 6279461009441798736}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6050664864436398517
 Animator:
@@ -244,6 +244,8 @@ MonoBehaviour:
     depletionMultiplier: 0.01
     scoreMultiplier: 1
   MainPlayerLook: {fileID: 0}
+  MainPlayerSanity: {fileID: 0}
+  CameraPostProcessVolume: {fileID: 0}
   PlayerAnimController: {fileID: 0}
   HealthDepletionBehavior: {fileID: 0}
 --- !u!114 &1032375288675608951
@@ -2118,6 +2120,7 @@ GameObject:
   - component: {fileID: 6279461009441798736}
   - component: {fileID: 6279461009441798738}
   - component: {fileID: 6279461009441798739}
+  - component: {fileID: 6222602254982254992}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -2219,6 +2222,20 @@ MonoBehaviour:
   MinVerticalLook: 10
   MaxVerticalLook: 65
   Acceleration: 8.5
+--- !u!114 &6222602254982254992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279461009441798737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14031823b9f3b6c4185fed94b640e4b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialPostProcessVolumeWeight: 0.25
+  MaxPostProcessVolumeWeight: 1
 --- !u!1 &6279461010007387163
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2247,9 @@ GameObject:
   - component: {fileID: 6279461010007387162}
   - component: {fileID: 6279461010007387164}
   - component: {fileID: 6279461010007387165}
-  m_Layer: 0
+  - component: {fileID: 1622841833}
+  - component: {fileID: 1622841832}
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2311,6 +2330,83 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6279461010007387163}
   m_Enabled: 1
+--- !u!114 &1622841833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279461010007387163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 6279461010007387162}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!114 &1622841832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279461010007387163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 5d163e0c699ac9b4b834721db1fff651, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 0.2
+  priority: 0
 --- !u!1 &6320824940134441135
 GameObject:
   m_ObjectHideFlags: 0

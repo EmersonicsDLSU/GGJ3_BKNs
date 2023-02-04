@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class HealthDepletionBehavior : MonoBehaviour, IMPRefs
 {
-    // Start is called before the first frame update
-    void Start()
+    public void RefStart(MainPlayer mainRef)
     {
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void RefUpdate(MainPlayer mainRef)
     {
         mainRef.MainPlayerAttributes.playerHealth -= (1 * mainRef.MainPlayerAttributes.depletionMultiplier);

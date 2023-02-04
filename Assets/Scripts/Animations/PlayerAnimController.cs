@@ -48,13 +48,13 @@ public class PlayerAnimController : MonoBehaviour, IMPRefs
     [HideInInspector] public Animator _animator;
     [HideInInspector] public PlayerAnimation _playerAnimation;
     
-    void Start()
+    public void RefStart(MainPlayer mainRef)
     {
         // Initialize components
         _animator = GetComponent<Animator>();
         _playerAnimation = GetComponent<PlayerAnimation>();
     }
-    
+
     public void RefUpdate(MainPlayer mainRef)
     {
 
