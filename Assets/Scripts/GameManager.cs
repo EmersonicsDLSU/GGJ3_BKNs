@@ -104,7 +104,8 @@ public class GameManager : tSingleton<GameManager>, IDataPersistence
 
         for (int i = 0; i < collectibleUpgradeLevel.Count; i++)
         {
-            collectibleUpgradeLevel[(ECollectible) i] = data.powerupLevels[i];
+            if (data.powerupLevels.ContainsKey(i))
+                collectibleUpgradeLevel[(ECollectible) i] = data.powerupLevels[i];
         }
     }
 

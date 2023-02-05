@@ -18,7 +18,8 @@ public class AttackDetection : MonoBehaviour
         uiInfectionCounter = FindObjectOfType<UI_InfectionCounterScript>();
         mpSc = FindObjectOfType<MainPlayer>();
         humanAnim = GetComponent<HumanAnimController>();
-        humanPool = GetComponent<HumanPool>();
+        if (GetComponent<HumanPool>())
+            humanPool = GetComponent<HumanPool>(); else Debug.LogError("Human Pool not found");
     }
 
     // Update is called once per frame
@@ -51,6 +52,6 @@ public class AttackDetection : MonoBehaviour
 
     void ReturnHumanPool()
     {
-        humanPool._objectPool.ReturnObject(humanPool);
+        FindObjectOfType<HumanSpawner>()._objectPool.ReturnObject(humanPool);
     }
 }
