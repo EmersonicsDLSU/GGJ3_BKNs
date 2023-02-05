@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CurrencyManager : MonoBehaviour
+public class CurrencyManager : MonoBehaviour, IDataPersistence
 {
     public static CurrencyManager Instance { get; private set; }
 
@@ -38,4 +38,13 @@ public class CurrencyManager : MonoBehaviour
         }
     }
 
+    public void LoadData(GameData data)
+    {
+        currency = data._currency;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data._currency = currency;
+    }
 }

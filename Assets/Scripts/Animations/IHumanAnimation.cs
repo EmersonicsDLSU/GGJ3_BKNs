@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum HumanStates
 {
-    RUNNING,
+    WALKING,
     DEATH
 }
 

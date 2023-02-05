@@ -26,6 +26,11 @@ public class GameManager : tSingleton<GameManager>, IDataPersistence
         collectibleUpgradeLevel[ECollectible.SlowDepleteCollectible] = 1;
 
     }
+
+    void Start()
+    {
+
+    }
     
     public void ResetPlayerScore()
     { 
@@ -96,6 +101,11 @@ public class GameManager : tSingleton<GameManager>, IDataPersistence
     {
         _highScore = data._highScore;
         _longestTimeSurvived = data._longestTimeSurvived;
+
+        for (int i = 0; i < collectibleUpgradeLevel.Count; i++)
+        {
+            collectibleUpgradeLevel[(ECollectible) i] = data.powerupLevels[i];
+        }
     }
 
     public void SaveData(GameData data)
@@ -104,5 +114,14 @@ public class GameManager : tSingleton<GameManager>, IDataPersistence
             data._highScore = playerScore;
         if (gameTime > data._longestTimeSurvived)
             data._longestTimeSurvived = gameTime;
+        
+        for (int i = 0; i < collectibleUpgradeLevel.Count; i++)
+        {
+            data.powerupLevels.Remove(i);
+        }
+        for (int i = 0; i < collectibleUpgradeLevel.Count; i++)
+        {
+            data.powerupLevels.Add(i, collectibleUpgradeLevel[(ECollectible)i]);
+        }
     }
 }

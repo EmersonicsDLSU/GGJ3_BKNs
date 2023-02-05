@@ -6,11 +6,11 @@ public class HumanAnimation : MonoBehaviour, IHumanAnimation<HumanAnimController
 {
     public void RunningAnim(HumanAnimController con)
     {
-        throw new System.NotImplementedException();
+        con.CurrentState = HumanStates.WALKING;
     }
 
     public void DeathAnim(HumanAnimController con)
     {
-        throw new System.NotImplementedException();
+        con.CurrentState = HumanStates.DEATH;
     }
 }

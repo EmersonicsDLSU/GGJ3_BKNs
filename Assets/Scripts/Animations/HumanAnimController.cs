@@ -12,8 +12,8 @@ public class HumanAnimController : MonoBehaviour, IHumanRefs
 
             switch (_currentState)
             {
-                case HumanStates.RUNNING:
-                    _animator.Play("Running");
+                case HumanStates.WALKING:
+                    _animator.Play("Walking");
                     break;
                 case HumanStates.DEATH:
                     _animator.CrossFade("Death", 1.0f);

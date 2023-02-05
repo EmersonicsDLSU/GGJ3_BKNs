@@ -38,6 +38,8 @@ public class AttackDetection : MonoBehaviour
                 uiInfectionCounter.UpdateInfectionCountUI(gm.GetPlayerScore());
                 //kill NPC by returning to pool
                 humanAnim._humanAnimation.DeathAnim(humanAnim);
+                // Increment money
+                CurrencyManager.Instance.AddCurrency(1);
                 Invoke("ReturnHumanPool", 5.0f);
                 Debug.LogWarning("KILL");
 

@@ -77,6 +77,7 @@ public class UpgradeManager : MonoBehaviour
                     gm.GetUpgradeDictionary()[ECollectible.SpeedCollectible] += 1;
                     CurrencyManager.Instance.SubtractCurrency(currentPrice1);
                     IncreasePrice(index);
+                    DataPersistenceManager.instance.SaveGame();
                 }
                 else
                 {
@@ -89,6 +90,7 @@ public class UpgradeManager : MonoBehaviour
                     gm.GetUpgradeDictionary()[ECollectible.MultiplierCollectible] += 1;
                     CurrencyManager.Instance.SubtractCurrency(currentPrice2);
                     IncreasePrice(index);
+                    DataPersistenceManager.instance.SaveGame();
                 }
                 else
                 {
@@ -101,6 +103,7 @@ public class UpgradeManager : MonoBehaviour
                     gm.GetUpgradeDictionary()[ECollectible.SlowDepleteCollectible] += 1;
                     CurrencyManager.Instance.SubtractCurrency(currentPrice3);
                     IncreasePrice(index);
+                    DataPersistenceManager.instance.SaveGame();
                 }
                 else
                 {
