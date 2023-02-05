@@ -20,6 +20,8 @@ public class HealthDepletionBehavior : MonoBehaviour, IMPRefs
         else
         {
             mainRef.PlayerAnimController.FireDeathAnim();
+            FindObjectOfType<tLoader>().LoadScene(0);
+            Cursor.visible = true; 
         }
     }
 }
