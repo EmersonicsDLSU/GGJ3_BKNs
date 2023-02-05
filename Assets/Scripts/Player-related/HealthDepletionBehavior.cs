@@ -14,14 +14,17 @@ public class HealthDepletionBehavior : MonoBehaviour, IMPRefs
     {
         if (mainRef.MainPlayerAttributes.playerHealth > 0)
         {
-            mainRef.MainPlayerAttributes.playerHealth -= (1 * mainRef.MainPlayerAttributes.depletionMultiplier);
+            mainRef.MainPlayerAttributes.playerHealth -= (1 * mainRef.MainPlayerAttributes.depletionMultiplier * 20.0f);
             healthSc.UpdateHealthUI(mainRef.MainPlayerAttributes.playerHealth / 100.0f);
         }
         else
         {
             mainRef.PlayerAnimController.FireDeathAnim();
             FindObjectOfType<tLoader>().LoadScene(0);
+
+            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true; 
+
             DataPersistenceManager.instance.SaveGame();
         }
     }
