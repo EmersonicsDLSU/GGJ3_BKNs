@@ -14,7 +14,7 @@ public class HealthDepletionBehavior : MonoBehaviour, IMPRefs
     {
         if (mainRef.MainPlayerAttributes.playerHealth > 0)
         {
-            mainRef.MainPlayerAttributes.playerHealth -= (1 * mainRef.MainPlayerAttributes.depletionMultiplier * 20.0f);
+            mainRef.MainPlayerAttributes.playerHealth -= (1 * mainRef.MainPlayerAttributes.depletionMultiplier);
             healthSc.UpdateHealthUI(mainRef.MainPlayerAttributes.playerHealth / 100.0f);
         }
         else
