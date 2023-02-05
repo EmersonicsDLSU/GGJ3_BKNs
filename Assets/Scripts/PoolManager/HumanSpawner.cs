@@ -9,7 +9,7 @@ public class HumanSpawner : MonoBehaviour
     [SerializeField] private GameObject _humanPrefab;
     [SerializeField] private int _maxSize = 30;
 
-    private ObjectPool<HumanPool> _objectPool;
+    public ObjectPool<HumanPool> _objectPool;
 
     void Start()
     {
