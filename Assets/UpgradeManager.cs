@@ -131,13 +131,13 @@ public class UpgradeManager : MonoBehaviour
         switch (index)
         {
             case 0:
-                currentPrice1 += currentPrice1 * 2;
+                currentPrice1 += currentPrice1 * 100;
                 break;
             case 1:
-                currentPrice2 += currentPrice2 * 2;
+                currentPrice2 += currentPrice2 * 100;
                 break;
             case 2:
-                currentPrice3 += currentPrice3 * 2;
+                currentPrice3 += currentPrice3 * 100;
                 break;
         }
         
