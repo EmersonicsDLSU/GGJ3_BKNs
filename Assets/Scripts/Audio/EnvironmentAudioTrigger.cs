@@ -39,8 +39,11 @@ public class EnvironmentAudioTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        isAvailable = false;
-        tAudioManager.instance.playSFXByName(exitClipName, this.transform);
+        if (other.gameObject.tag == "Player" && isAvailable)
+        {
+            isAvailable = false;
+            tAudioManager.instance.playSFXByName(exitClipName, this.transform);
+        }
     }
 
     void Update()
