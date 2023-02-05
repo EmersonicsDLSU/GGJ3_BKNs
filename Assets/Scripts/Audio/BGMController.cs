@@ -5,9 +5,14 @@ using UnityEngine;
 public class BGMController : MonoBehaviour
 {
     public string clipName;
+    private bool playOnce = true;
 
-    void Awake()
+    private void Update()
     {
-        tAudioManager.instance.playBGMByName(clipName);
+        if (playOnce)
+        {
+            tAudioManager.instance.playBGMByName(clipName);
+            playOnce = false;
+        }
     }
 }

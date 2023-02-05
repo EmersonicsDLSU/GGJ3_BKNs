@@ -21,7 +21,10 @@ public class HealthDepletionBehavior : MonoBehaviour, IMPRefs
         {
             mainRef.PlayerAnimController.FireDeathAnim();
             FindObjectOfType<tLoader>().LoadScene(0);
+
+            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true; 
+
             DataPersistenceManager.instance.SaveGame();
         }
     }

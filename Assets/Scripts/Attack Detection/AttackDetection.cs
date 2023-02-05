@@ -27,10 +27,11 @@ public class AttackDetection : MonoBehaviour
     {
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Player"))
         {
+            Debug.Log(mpSc.PlayerAnimController.CurrentState);
             //check if attack button is clicked
             if(mpSc.PlayerAnimController.CurrentState == ZombieStates.ATTACK)
             {
@@ -43,6 +44,9 @@ public class AttackDetection : MonoBehaviour
                 CurrencyManager.Instance.AddCurrency(1);
                 Invoke("ReturnHumanPool", 5.0f);
                 Debug.LogWarning("KILL");
+
+                //regen health
+                mpSc.MainPlayerAttributes.playerHealth += 0.1f;
 
                 //play kill sfx?
             }
