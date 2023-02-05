@@ -51,5 +51,6 @@ public class SpeedPool : MonoBehaviour
     private void ResetAttribute()
     {
         mainPlayerReference.MainPlayerAttributes.playerSpeed = 1.5f;
+        mainPlayerReference.GetComponent<PlayerAnimController>()._animator.SetFloat("SpeedMultiplier", 1);
     }
 }
