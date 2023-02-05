@@ -48,6 +48,6 @@ public class SlowPool : MonoBehaviour
 
     private void ResetAttribute()
     {
-        mainPlayerReference.MainPlayerAttributes.depletionMultiplier = 1.0f;
+        mainPlayerReference.MainPlayerAttributes.depletionMultiplier = 0.01f;
     }
 }

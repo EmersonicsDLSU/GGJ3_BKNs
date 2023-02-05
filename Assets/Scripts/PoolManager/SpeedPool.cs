@@ -37,6 +37,8 @@ public class SpeedPool : MonoBehaviour
             mainPlayerReference.MainPlayerAttributes.playerSpeed =
                 GameManagerReference.GetSpeedUpgradeEquivalent(GameManagerReference.GetUpgradeDictionary()[ECollectible.SpeedCollectible]);
 
+            mainPlayerReference.GetComponent<PlayerAnimController>()._animator.SetFloat("SpeedMultiplier", mainPlayerReference.MainPlayerAttributes.playerSpeed);
+
             // display effect icon in HUD
             uiStatusEffect.ActivateStatusEffectUI((int)ECollectible.SpeedCollectible);
             
@@ -48,6 +50,6 @@ public class SpeedPool : MonoBehaviour
 
     private void ResetAttribute()
     {
-        mainPlayerReference.MainPlayerAttributes.playerSpeed = 1.0f;
+        mainPlayerReference.MainPlayerAttributes.playerSpeed = 1.5f;
     }
 }
