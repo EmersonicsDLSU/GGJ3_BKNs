@@ -6,19 +6,19 @@ using UnityEngine.InputSystem;
 public class MPLook : MonoBehaviour, IMPRefs
 {
     [Tooltip ("Sensitivity for horizontal mouse input")]
-    public float HorizontalMouseSensitivity = 0.4f;
+    public float HorizontalMouseSensitivity = 0.3f;
 
     [Tooltip ("Sensitivity for vertical mouse input")]
-    public float VerticalMouseSensitivity = 0.4f;
+    public float VerticalMouseSensitivity = 0.5f;
 
     [Tooltip("Minimum rotation for looking up and down")]
     public float MinVerticalLook = 10.0f;
 
     [Tooltip("Maximum rotation for looking up and down")]
-    public float MaxVerticalLook = 30.0f;
+    public float MaxVerticalLook = 45.0f;
 
     [Tooltip("Acceleration when looking")]
-    public float Acceleration = 50.0f;
+    public float Acceleration = 60.0f;
  
     private Vector2 _curLookInputValue;
     private float _curCameraXRotation;
