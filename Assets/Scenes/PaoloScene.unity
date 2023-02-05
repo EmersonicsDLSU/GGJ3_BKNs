@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 746305035}
   - component: {fileID: 746305034}
   m_Layer: 0
-  m_Name: Controller
+  m_Name: BGMController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -873,6 +873,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _highScore: 0
   _longestTimeSurvived: 0
+--- !u!1 &1077890788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1077890790}
+  - component: {fileID: 1077890789}
+  m_Layer: 0
+  m_Name: CursorController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1077890789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077890788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88bdc6a4f6d90904880da3abba0bbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 2800000, guid: fa6bc8020768db04195105d5ca5c85aa, type: 3}
+--- !u!4 &1077890790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077890788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1063.5308, y: 449.4326, z: 2.6722949}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1124525820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,6 +2204,7 @@ PrefabInstance:
     - {fileID: 4263795489667476695, guid: acbd50f538989254fbc6627d521c15bf, type: 3}
     - {fileID: 8341402622456944802, guid: acbd50f538989254fbc6627d521c15bf, type: 3}
     - {fileID: 6474475039227811952, guid: acbd50f538989254fbc6627d521c15bf, type: 3}
+    - {fileID: 1570741791503838908, guid: acbd50f538989254fbc6627d521c15bf, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2342505200559187785, guid: acbd50f538989254fbc6627d521c15bf, type: 3}
