@@ -46,7 +46,8 @@ public class AttackDetection : MonoBehaviour
                 Debug.LogWarning("KILL");
 
                 //regen health
-                mpSc.MainPlayerAttributes.playerHealth += 0.1f;
+                if(mpSc.MainPlayerAttributes.playerHealth < 100)
+                    mpSc.MainPlayerAttributes.playerHealth += 0.1f;
 
                 //play kill sfx?
             }
