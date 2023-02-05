@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.047048293, g: 0.08362358, b: 0.1417228, a: 1}
+  m_IndirectSpecularColor: {r: 0.04694085, g: 0.08362194, b: 0.14163676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -340,6 +340,11 @@ Transform:
   m_Father: {fileID: 1561979874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &185353178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+  m_PrefabInstance: {fileID: 1601510776}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &191970241
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +407,11 @@ Transform:
   m_Father: {fileID: 1862481235}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &236308409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+  m_PrefabInstance: {fileID: 1024981642}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &249496166
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +536,11 @@ Transform:
   m_Father: {fileID: 1561979874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &432521053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+  m_PrefabInstance: {fileID: 1318225147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &452535386
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +836,11 @@ Transform:
   m_Father: {fileID: 1561979874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &611032212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+  m_PrefabInstance: {fileID: 2082997977}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &616083978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -880,7 +900,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1926146227}
   m_SourcePrefab: {fileID: 100100000, guid: 477f7260de1876445a013c7c393accb9, type: 3}
 --- !u!4 &616083979 stripped
 Transform:
@@ -949,6 +972,11 @@ Transform:
   m_Father: {fileID: 1561979874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &770668172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+  m_PrefabInstance: {fileID: 1213485716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &783993348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,13 +1361,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1024981644}
   m_SourcePrefab: {fileID: 100100000, guid: 477f7260de1876445a013c7c393accb9, type: 3}
 --- !u!4 &1024981643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7685183540492277384, guid: 477f7260de1876445a013c7c393accb9, type: 3}
   m_PrefabInstance: {fileID: 1024981642}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1024981644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236308409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3277accd329e74891966d520fdaec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sphereCollider: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  clipName: CarCrash
+  exitClipName: CarAlarm
+  radius: 5
 --- !u!1 &1034367071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,13 +1743,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1213485718}
   m_SourcePrefab: {fileID: 100100000, guid: 477f7260de1876445a013c7c393accb9, type: 3}
 --- !u!4 &1213485717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7685183540492277384, guid: 477f7260de1876445a013c7c393accb9, type: 3}
   m_PrefabInstance: {fileID: 1213485716}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1213485718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770668172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3277accd329e74891966d520fdaec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sphereCollider: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  clipName: CarCrash
+  exitClipName: CarAlarm
+  radius: 5
 --- !u!1 &1218959037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,6 +1801,215 @@ Transform:
   m_Father: {fileID: 1561979874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1309140508
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d6dc7fc5450dab54fb049aab3f7193b0, type: 3}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[0].name
+      value: ClawSlash1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[0].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05fa39ce6641275498fa0a059c56253e, type: 3}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[1].name
+      value: ClawSlash2
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[1].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f4d0d4ddf1b8f3c46ac9f2953afedb18, type: 3}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[2].name
+      value: CarCrash
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[2].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7544b4dfcabe7a942b084563cc34402c, type: 3}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[3].name
+      value: CarAlarm
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[3].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6463d87829d986c45bbe60da3bf66a52, type: 3}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[4].name
+      value: Adrenaline
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[4].type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[4].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[0].volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[1].volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[2].volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[3].isLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[3].volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[4].isLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[4].volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[0].priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[1].priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[2].priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[3].priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[4].priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[4].playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[2].spatialBlend
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[3].spatialBlend
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729319898329576, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: tAudioInfoList.Array.data[4].spatialBlend
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638989, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638989, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 54.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638989, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638989, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638989, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638989, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638989, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638989, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638989, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638989, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638989, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481729321518638991, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 230e10d22b210aa4285a8438bdf3d878, type: 3}
 --- !u!1001 &1318225147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1792,13 +2069,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1318225149}
   m_SourcePrefab: {fileID: 100100000, guid: 477f7260de1876445a013c7c393accb9, type: 3}
 --- !u!4 &1318225148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7685183540492277384, guid: 477f7260de1876445a013c7c393accb9, type: 3}
   m_PrefabInstance: {fileID: 1318225147}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1318225149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432521053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3277accd329e74891966d520fdaec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sphereCollider: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  clipName: CarCrash
+  exitClipName: CarAlarm
+  radius: 5
 --- !u!1 &1323398823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,6 +2127,11 @@ Transform:
   m_Father: {fileID: 1862481235}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1429499801 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+  m_PrefabInstance: {fileID: 1564099846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1446085648
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,13 +2368,78 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1564099848}
   m_SourcePrefab: {fileID: 100100000, guid: 477f7260de1876445a013c7c393accb9, type: 3}
 --- !u!4 &1564099847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7685183540492277384, guid: 477f7260de1876445a013c7c393accb9, type: 3}
   m_PrefabInstance: {fileID: 1564099846}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564099848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429499801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3277accd329e74891966d520fdaec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sphereCollider: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  clipName: CarCrash
+  exitClipName: CarAlarm
+  radius: 5
+--- !u!1 &1564817246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1564817248}
+  - component: {fileID: 1564817247}
+  m_Layer: 0
+  m_Name: BGMController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1564817247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564817246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4dad96d977771d48babe6f460591f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipName: Adrenaline
+--- !u!4 &1564817248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564817246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.035, y: 2.3210049, z: -4.284355}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1565319924
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,13 +2624,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1601510778}
   m_SourcePrefab: {fileID: 100100000, guid: 477f7260de1876445a013c7c393accb9, type: 3}
 --- !u!4 &1601510777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7685183540492277384, guid: 477f7260de1876445a013c7c393accb9, type: 3}
   m_PrefabInstance: {fileID: 1601510776}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1601510778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185353178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3277accd329e74891966d520fdaec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sphereCollider: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  clipName: CarCrash
+  exitClipName: CarAlarm
+  radius: 5
 --- !u!1 &1608611247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,7 +2837,10 @@ PrefabInstance:
     - {fileID: 1093937775740417791, guid: e69ad259e7729454b9b77888f86fd473, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1032375288675608949, guid: e69ad259e7729454b9b77888f86fd473, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1961702210}
   m_SourcePrefab: {fileID: 100100000, guid: e69ad259e7729454b9b77888f86fd473, type: 3}
 --- !u!1 &1804438095
 GameObject:
@@ -2633,6 +3023,28 @@ Transform:
   m_Father: {fileID: 1862481235}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1926146226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+  m_PrefabInstance: {fileID: 616083978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1926146227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926146226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3277accd329e74891966d520fdaec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sphereCollider: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  clipName: CarCrash
+  exitClipName: CarAlarm
+  radius: 5
 --- !u!1 &1960171480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,6 +3076,23 @@ Transform:
   m_Father: {fileID: 1862481235}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1961702202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1032375288675608949, guid: e69ad259e7729454b9b77888f86fd473, type: 3}
+  m_PrefabInstance: {fileID: 1622841829}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1961702210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961702202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45d19f99aa55424f91a1d5ca8ea4c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1985752410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,10 +3256,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1238150327094785650, guid: 477f7260de1876445a013c7c393accb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2082997979}
   m_SourcePrefab: {fileID: 100100000, guid: 477f7260de1876445a013c7c393accb9, type: 3}
 --- !u!4 &2082997978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7685183540492277384, guid: 477f7260de1876445a013c7c393accb9, type: 3}
   m_PrefabInstance: {fileID: 2082997977}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2082997979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611032212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3277accd329e74891966d520fdaec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sphereCollider: {fileID: 0}
+  _rigidBody: {fileID: 0}
+  clipName: CarCrash
+  exitClipName: CarAlarm
+  radius: 5

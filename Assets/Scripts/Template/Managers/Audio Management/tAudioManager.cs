@@ -193,6 +193,7 @@ public class tAudioManager : tSingleton<tAudioManager>
             if (BGM.name == name)
             {
                 //throw sound
+                Debug.Log("Thrown");
                 throwerRef.ThrowAudio(BGM);
                 return;
             }

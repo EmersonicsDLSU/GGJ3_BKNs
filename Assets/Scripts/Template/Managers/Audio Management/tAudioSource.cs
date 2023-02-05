@@ -15,6 +15,8 @@ public class tAudioSource : MonoBehaviour
     private void Awake()
     {
         _audioSource = this.gameObject.AddComponent<AudioSource>();
+        _audioSource.rolloffMode = AudioRolloffMode.Linear;
+        _audioSource.maxDistance = 5;
     }
 
     public void AssignObjectPool(tObjectPool<tAudioSource> objectPool)
