@@ -13,6 +13,7 @@ public class CurrencyManager : MonoBehaviour, IDataPersistence
             return;
         }
         Instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void AddCurrency(int value)
