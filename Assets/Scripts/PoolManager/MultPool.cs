@@ -40,7 +40,7 @@ public class MultPool : MonoBehaviour
             // display effect icon in HUD
             uiStatusEffect.ActivateStatusEffectUI((int)ECollectible.SpeedCollectible);
             
-            _objectPool.ReturnObject(this);
+            FindObjectOfType<CollectibleSpawner>()._multPool.ReturnObject(this);
             Invoke("ResetAttribute", 5.0f);
             
         }

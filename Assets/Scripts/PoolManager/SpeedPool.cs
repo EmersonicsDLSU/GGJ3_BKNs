@@ -40,7 +40,7 @@ public class SpeedPool : MonoBehaviour
             // display effect icon in HUD
             uiStatusEffect.ActivateStatusEffectUI((int)ECollectible.SpeedCollectible);
             
-            _objectPool.ReturnObject(this);
+            FindObjectOfType<CollectibleSpawner>()._speedPool.ReturnObject(this);
             Invoke("ResetAttribute", 5.0f);
             
         }

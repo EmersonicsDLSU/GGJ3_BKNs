@@ -10,9 +10,9 @@ public class CollectibleSpawner : MonoBehaviour
     [SerializeField] private GameObject _multPrefab;
     [SerializeField] private GameObject _slowPrefab;
 
-    private ObjectPool<SpeedPool> _speedPool;
-    private ObjectPool<MultPool> _multPool;
-    private ObjectPool<SlowPool> _slowPool;
+    public ObjectPool<SpeedPool> _speedPool;
+    public ObjectPool<MultPool> _multPool;
+    public ObjectPool<SlowPool> _slowPool;
 
     void Start()
     {
