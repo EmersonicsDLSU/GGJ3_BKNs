@@ -19,8 +19,8 @@ public class MainPlayer : MonoBehaviour
     private void Awake()
     {
         // gets the reference of the components
-        CameraTransform = GetComponentInChildren<Camera>().transform;
-        CameraPostProcessVolume = CameraTransform.GetComponent<PostProcessVolume>();
+        CameraTransform = Camera.main.transform.parent;
+        CameraPostProcessVolume = Camera.main.transform.GetComponent<PostProcessVolume>();
         if (GetComponentInChildren<MPLook>() != null) MainPlayerLook = GetComponentInChildren<MPLook>();
         else Debug.LogError("Missing 'MPLook' script!");
         if (GetComponentInChildren<MPSanity>() != null) MainPlayerSanity = GetComponentInChildren<MPSanity>();

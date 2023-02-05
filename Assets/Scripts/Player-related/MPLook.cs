@@ -50,7 +50,7 @@ public class MPLook : MonoBehaviour, IMPRefs
         _curCameraYRotation += _curLookInputValue.x * HorizontalMouseSensitivity;
         cameraRotation.y = _curCameraYRotation;
 
-        Vector3 newCameraRotation = new Vector3(cameraRotation.x, mainRef.CameraTransform.eulerAngles.y, mainRef.CameraTransform.eulerAngles.z);
+        Vector3 newCameraRotation = new Vector3(cameraRotation.x, cameraRotation.y, mainRef.CameraTransform.eulerAngles.z);
         Vector3 newTransformRotation = new Vector3(mainRef.transform.eulerAngles.x, cameraRotation.y, mainRef.transform.eulerAngles.z);
 
         mainRef.CameraTransform.rotation = Quaternion.Lerp(mainRef.CameraTransform.rotation, Quaternion.Euler(newCameraRotation), Time.deltaTime * Acceleration);
