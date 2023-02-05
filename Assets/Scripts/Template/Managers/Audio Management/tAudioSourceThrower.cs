@@ -22,7 +22,7 @@ public class tAudioSourceThrower : MonoBehaviour
             Debug.LogError("Missing prefab or component!");
         else
         {
-            audioSourcePool = new tObjectPool<tAudioSource>(AudioFactoryMethod, TurnOnAudioSource, TurnOffAudioSource, 10, false);
+            audioSourcePool = new tObjectPool<tAudioSource>(AudioFactoryMethod, TurnOnAudioSource, TurnOffAudioSource, 10, true);
         }
     }
     private tAudioSource AudioFactoryMethod()
