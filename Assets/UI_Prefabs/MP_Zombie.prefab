@@ -2220,11 +2220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338b8848db1bfc2439f34648d486603e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HorizontalMouseSensitivity: 0.5
+  HorizontalMouseSensitivity: 0.3
   VerticalMouseSensitivity: 0.5
   MinVerticalLook: 10
-  MaxVerticalLook: 65
-  Acceleration: 8.5
+  MaxVerticalLook: 45
+  Acceleration: 60
 --- !u!114 &6222602254982254992
 MonoBehaviour:
   m_ObjectHideFlags: 0
